@@ -33,3 +33,7 @@ button.icon-button>img {
 .button-input-container>label{
     display:block;
 }
+i>img{
+    max-height: 1em;
+    vertical-align: middle;
+}
