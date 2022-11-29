@@ -24,6 +24,10 @@ img.u-featured {
 
 button.icon-button {
     line-height: 24px;
+    background-color: #666289;
+    color:#fff;
+    border:none;
+    border-radius:4px;
 }
 button.icon-button>img {
     max-height: 24px;
@@ -32,6 +36,23 @@ button.icon-button>img {
 
 .button-input-container>label{
     display:block;
+}
+.button-input-container>input{
+    background-color: #666289;
+    color:#fff;
+    border:none;
+    border-radius: 4px;
+    padding: 4px 66px 4px 6px;
+    margin-right: -60px;
+}
+.button-input-container>input:focus{
+    border:none;
+}
+.button-input-container>button{
+    background-color: #666289;
+    color:#fff;
+    border-radius: 4px;
+    border-color: #fff;
 }
 i>img{
     max-height: 1em;

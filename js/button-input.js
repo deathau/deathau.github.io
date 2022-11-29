@@ -42,8 +42,16 @@ function buttonInputClick() {
       this.style.display = null
     }
   })
+  
+  input.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      button.click();
+    }
+  });
 
   this.parentNode.insertBefore(buttonInput, this.nextSibling)
+  input.focus()
 }
 
 document.addEventListener('DOMContentLoaded', () => {
