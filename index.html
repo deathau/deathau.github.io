@@ -12,36 +12,19 @@
     (Details: https://indieweb.org/Microsub#Getting_Started)
     1. After publishing this to your domain, sign in to https://aperture.p3k.io/login with your domain
     2. You will see a <link> tag displayed on your dashboard that looks like:
-      <link rel="microsub" href="https://aperture.p3k.io/microsub/000">
+    <link rel="microsub" href="https://aperture.p3k.io/microsub/000">
     3. Copy that <link> tag and paste it after this HTML comment.
     4. Publish the updated page!
-   -->
-  <title>My New Website</title>
-  <style>
-    @media (prefers-color-scheme: dark) {
-      html { background-color: #111111; color: #fbfbfb; }
-      a { color: #ca8465; }
-    }
-    body {
-      line-height: 1.6;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-      text-align: center;
-      margin: 1rem auto;
-      min-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    img.u-photo { border-radius: 50%; }
-    ul { padding: 0; list-style: none; }
-  </style>
+  -->
+  <link rel="stylesheet" href="styles.css">
+  <title>Mon Repos (Death's Domain)</title>
 </head>
 
 <body>
   <!-- Reference for representative h-card properties: https://microformats.org/wiki/h-card -->
   <main class="h-card" rel="author">
-      <img class="u-photo" alt="My profile photo" src="avatar-tt@800.png" />
+      <img class="u-featured" src="img/banner-1500x500.jpg" alt="A grim reaper in a decorated cubicle, writing and daydreaming, surrounded by many other grim reapers in bland, grey, cubicles" />
+      <img class="u-photo" alt="My profile photo — a pixelated version of me" src="img/avatar-tt@800.png" />
     <h1>
       I'm <span class="p-name">Gordon Pedersen</span>.
     </h1>
@@ -50,12 +33,45 @@
       ...and I am a human on the Internet.
     </p>
     <ul>
+      <li>
+        <button class="icon-button button-input"
+          data-instruction="Please enter your fediverse / mastodon handle (e.g. '@user@domain.social')" 
+          data-placeholder="@user@domain.social"
+          data-success="Thanks for the follow!"
+          onsubmit="handleFollow(event.value)">
+          <img src="img/Fediverse_logo_proposal.svg" alt="Fediverse logo">
+          Follow @death.au@death.id.au
+        </button>
+      </li>
       <li><a class="u-uid u-url" href="https://death.id.au">My New Website</a><a class="u-url" href="acct:death.au@death.id.au"></a></li>
       <li><a class="u-url" href="https://github.com/deathau" rel="me">@deathau</a></li>
       <li><a class="u-url" href="https://twitter.com/death_au" rel="me">@death_au</a></li>
       <li><a class="u-url" href="https://pkm.social/@death_au" rel="me">@death_au@pkm.social</a></li>
     </ul>
   </main>
+  <script src="js/follow.js"></script>
+  <script src="js/button-input.js"></script>
+  <script>
+    window.addEventListener('unhandledrejection', function(event) {
+      alert(event.reason)
+    })
+    function handleFollow(handle) {
+      try{
+        follow('@death.au@death.id.au', handle)
+      }
+      catch(e){
+        alert(e)
+      }
+    }
+    function tryFollow(user) {
+      try{
+        follow(user)
+      }
+      catch(e){
+        alert(e)
+      }
+    }
+  </script>
 </body>
 
 </html>
