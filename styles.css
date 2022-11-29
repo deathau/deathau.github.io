@@ -37,3 +37,6 @@ i>img{
     max-height: 1em;
     vertical-align: middle;
 }
+img.tiny-avatar {
+    max-height: 17px;
+}
