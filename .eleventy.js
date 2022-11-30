@@ -28,8 +28,8 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("_content/notes/*.md").reverse();
   });
 
-  eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy({"img":"assets/img"});
+  eleventyConfig.addPassthroughCopy({"js":"assets/js"});
   eleventyConfig.addPassthroughCopy("css");
 
   // Return your Object options:
