@@ -4,7 +4,7 @@
   "description": "This repository provides minimal HTML for starting a new web site!",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy"
+    "build": "npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
