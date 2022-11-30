@@ -28,6 +28,9 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("_content/notes/*.md").reverse();
   });
 
+  eleventyConfig.addPassthroughCopy("img");
+  eleventyConfig.addPassthroughCopy("js");
+
   // Return your Object options:
   return {
     dir: {
