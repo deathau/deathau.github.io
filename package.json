@@ -1,0 +1,23 @@
+{
+  "name": "death.id.au",
+  "version": "1.0.0",
+  "description": "This repository provides minimal HTML for starting a new web site!",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deathau/deathau.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deathau/deathau.github.io/issues"
+  },
+  "homepage": "https://github.com/deathau/deathau.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.2"
+  }
+}
