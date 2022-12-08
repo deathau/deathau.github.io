@@ -4,13 +4,14 @@ layout: layout-feed.njk
 pagination:
   data: collections.feed
   size: 20
+eleventyExcludeFromCollections: true
 ---
 {% from "macro-entry.njk" import entryMacro %}
 
 <ul>
 {% for item in pagination.items %}
   <li>
-    {{ entryMacro(item.data, item.url, item.templateContent) }}
+    {{ entryMacro(item.data, item.url, item.templateContent, true) }}
   </li>
 {% endfor %}
 </ul>

@@ -1,0 +1,42 @@
+---json
+{
+  "layout": null,
+  "permalink": "feed.json",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Mon Repos (Death's Domain)",
+    "subtitle": "A feed of all my posts on the fediverse",
+    "language": "en",
+    "url": "https://death.id.au/",
+    "author": {
+      "name": "Gordon Pedersen",
+      "email": "death.au@death.id.au"
+    }
+  }
+}
+---
+{ {% from "macro-summary.njk" import summaryMacro %}
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "{{ metadata.title }}",
+  "language": "{{ metadata.language }}",
+  "home_page_url": "{{ metadata.url }}",
+  "feed_url": "{{ permalink | absoluteUrl(metadata.url) }}",
+  "description": "{{ metadata.subtitle }}",
+  "author": {
+    "name": "{{ metadata.author.name }}",
+    "url": "{{ metadata.author.url }}"
+  },
+  "items": [
+    {%- for post in collections.feed %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
+    {
+      "id": "{{ absolutePostUrl }}",
+      "url": "{{ absolutePostUrl }}",
+      "title": "{{ post.data.title }}",
+      "content_html": {{ summaryMacro(post.data, post.url) | concat(post.templateContent) | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }},
+      "date_published": "{{ post.date | dateToRfc3339 }}"
+    }
+    {% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}

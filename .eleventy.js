@@ -1,3 +1,5 @@
+const pluginRss = require("@11ty/eleventy-plugin-rss");
+
 module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("formatDate", function(value) { 
@@ -22,6 +24,10 @@ module.exports = function(eleventyConfig) {
       console.error(`Could not convert "${value}"`, e)
       return value;
     }
+  });
+
+  eleventyConfig.addFilter("concat", function(value, other) { 
+    return value + '' + other
   });
 
   eleventyConfig.addCollection("notes", function(collectionApi) {
@@ -89,6 +95,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("CNAME");
 
+  eleventyConfig.addPlugin(pluginRss);
+
   // Return your Object options:
   return {
     dir: {
@@ -96,6 +104,6 @@ module.exports = function(eleventyConfig) {
       output: "pub"
     },
     htmlTemplateEngine: "njk",
-    templateFormats: ["md","html"]
+    templateFormats: ["md","html","njk"]
   }
 };
