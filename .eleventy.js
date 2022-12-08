@@ -31,7 +31,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("feed", function(collectionApi) {
     return collectionApi.getAllSorted().reverse().filter(item => {
       let showInFeed = false;
-      //if(!item.data.published) return false
+      if(!item.data.published) return false
       if(item.filePathStem.startsWith('/notes/')){
         if(item.data['like-of']) item.data.postType = "like"
         else if(item.data['in-reply-to']) item.data.postType = "reply"
