@@ -18,16 +18,16 @@ title: Mon Repos (Death's Domain)
   <link rel="micropub" href="https://micropub.death.id.au/.netlify/functions/micropub">
   <link rel="micropub_media" href="https://micropub.death.id.au/.netlify/functions/media">
   <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://kit.fontawesome.com/ebe14e90c3.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js" crossorigin="anonymous"></script>
   <title>{{ title }}</title>
+  {% renderlayoutblock 'head' %}
 </head>
 
 <body>
-  <article class="{{ type }}">
-    <time class="dt-published" datetime="{{ date }}">{{ date | formatDate }}</time>
-    <div class="e-content">
-      {{ content | safe }}
-    </div>
-  </article>
+  <main>
+    {{ content | safe }}
+  </main>
 </body>
-
+{% renderlayoutblock 'foot' %}
 </html>

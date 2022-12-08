@@ -1,0 +1,95 @@
+{% from "macro-card-head.njk" import cardHeadMacro %}
+{% macro entryMacro(item, url, content, summaryOnly=false) %}
+
+<div class="h-entry type-{{ item.postType }}">
+  {{ cardHeadMacro(item.author, item.date, url) }}
+  <div class="card-body">
+    {% switch item.postType %}
+      {% case "article" %} {# article summary: #}
+        <h2 class="p-name"><a class="u-url" rel="bookmark" title="{{ item.name if item.name else item.title }}" href="{{ url }}">
+          {{ item.name if item.name else item.title }}
+        </a></h2>
+        {% if item.summary %}
+          <p class="p-summary">{{ item.summary | safe }}</p>
+        {% endif %}
+
+      {% case "reply" %} {# reply summary: #}
+        <p class="p-summary"><i class="fa-solid fa-reply"></i> Reply to <a class="u-in-reply-to" href="{{ item["in-reply-to"] }}">{{ item["in-reply-to"] }}</a></p>
+
+      {% case "like" %} {# like summary: #}
+        <p class="p-summary">Favourited <i class="fa-solid fa-star"></i> <a class="u-like-of" href="{{ item['like-of'] }}">{{ item['like-of'] }}</a></p>
+
+      {% case "boost" %} {# boost summary: #}
+        <p class="p-summary"></p>Boosted <i class="fa-solid fa-retweet"></i> <a class="u-repost-of" href="{{ item["repost-of"] }}">{{ item["repost-of"] }}</a></p>
+
+      {% case "bookmark" %} {# bookmark summary: #}
+        <p class="p-summary">Bookmarked <i class="fa-solid fa-bookmark"></i> <a class="u-bookmark-of" href="{{ item["bookmark-of"] }}">{{ item["bookmark-of"] }}</a></p>
+
+      {% case "read" %} {# read summary: #}
+        <p class="p-summary">
+          {% if item["read-status"].toLowerCase() == "to-read" %}
+              <data class="p-x-read-status p-read-status" value="to-read">To Read: </data>
+              <i class="fa-solid fa-book"></i>
+          {% elseif item["read-status"].toLowerCase() == "reading" %}
+              <data class="p-x-read-status p-read-status" value="reading">Currently Reading: </data>
+              <i class="fa-solid fa-book-open"></i>
+          {% elseif item["read-status"].toLowerCase() == "finished" %}
+              <data class="p-x-read-status p-read-status" value="finished">Finished Reading: </data>
+              <i class="fa-solid fa-book-bookmark"></i>
+          {% endif %}
+
+          {% if item["read-of"].startsWith("http") %}
+              <a class="u-read-of" href="{{ item["read-of"] }}">{{ item["read-of"] }}</a>
+          {% else %}
+              <strong class="p-read-of">{{ item["read-of"] }}</strong>
+          {% endif %}
+        </p>
+
+      {% case "watch" %} {# watch summary: #}
+        <p class="p-summary">
+          {% if item["watch-status"].toLowerCase() == "to-watch" %}
+              <data class="p-x-watch-status p-watch-status" value="to-watch">To Watch: </data>
+          {% elseif item["watch-status"].toLowerCase() == "watching" %}
+              <data class="p-x-watch-status p-watch-status" value="watching">Currently Watching: </data>
+          {% elseif item["watch-status"].toLowerCase() == "watched" or item["watch-status"].toLowerCase() == "finished" %}
+              <data class="p-x-watch-status p-watch-status" value="finished">Finished watching: </data>
+          {% else %}
+              <data class="p-x-watch-status p-watch-status" value="finished">Watched: </data>
+          {% endif %}
+          <i class="fa-solid fa-clapperboard"></i>
+    
+          {% if item["watch-of"].startsWith("http") %}
+              <a class="u-watch-of" href="{{ item["watch-of"] }}">{{ item["watch-of"] }}</a>
+          {% else %}
+              <strong class="p-watch-of">{{ item["watch-of"] }}</strong>
+          {% endif %}
+        </p>
+
+      {% case "rsvp" %} {# rsvp summary: #}
+        <p class="p-summary">
+        
+          {% if item.rsvp.toLowerCase() == "yes" %}
+          <i class="fa-regular fa-calendar-check"></i>
+          <data class="p-rsvp" value="yes">Will attend</data>
+          {% elseif item.rsvp.toLowerCase() == "maybe" %}
+          <i class="fa-regular fa-calendar-minus"></i>
+          <data class="p-rsvp" value="maybe">Might attend</data>
+          {% elseif item.rsvp.toLowerCase() == "no" %}
+          <i class="fa-regular fa-calendar-xmark"></i>
+          <data class="p-rsvp" value="no">Won't attend</data>
+          {% elseif item.rsvp.toLowerCase() == "interested" %}
+          <i class="fa-regular fa-calendar-plus"></i>
+          <data class="p-rsvp" value="interested">Interested in</data>
+          {% endif %}
+    
+          <a class="u-in-reply-to" href="{{ item["in-reply-to"] }}">{{ item["in-reply-to"] }}</a>
+        </p>
+    {% endswitch %}
+
+    {% if item.postType == 'article' and summaryOnly %}
+    {% elseif content %}
+      <div class="e-content">{{ content | safe }}</div>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}

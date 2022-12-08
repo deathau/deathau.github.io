@@ -1,0 +1,13 @@
+---js
+{
+  layout: "layout-main.njk",
+  ctx: function() { return this.ctx }
+}
+---
+{% from "macro-entry.njk" import entryMacro %}
+
+{{ entryMacro(ctx(), url, content) }}
+
+{% layoutblock 'foot' %}
+<script src="/assets/js/relative-time.js"></script>
+{% endlayoutblock %}

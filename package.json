@@ -4,7 +4,8 @@
   "description": "This repository provides minimal HTML for starting a new web site!",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/deathau/deathau.github.io#readme",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.2"
+  },
+  "dependencies": {
+    "@11ty/eleventy-fetch": "^3.0.0"
   }
 }

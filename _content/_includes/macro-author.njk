@@ -1,0 +1,9 @@
+{% macro authorMacro(author) %}
+  <a class="p-author h-card u-url" href="{{ author.canonical_uri if author.canonical_uri else author.url }}">
+    <img class="u-photo small-avatar" alt="{{ author.icon.name if author.icon.name else "Avatar for " + author.display_name }}" src="{{ author.icon.url if author.icon.url else author.avatar }}"/>
+    <span class="display-name">
+      <span class="p-name">{{ author.display_name }}</span>
+      <span class="p-nickname">{{ author.handle }}</span>
+    </span>
+  </a>
+{% endmacro %}

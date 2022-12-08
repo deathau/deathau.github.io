@@ -1,0 +1,17 @@
+---
+title: My Feed
+layout: layout-feed.njk
+pagination:
+  data: collections.feed
+  size: 20
+---
+{% from "macro-entry.njk" import entryMacro %}
+
+<ul>
+{% for item in pagination.items %}
+  <li>
+    {{ entryMacro(item.data, item.url, item.templateContent) }}
+  </li>
+{% endfor %}
+</ul>
+

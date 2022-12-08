@@ -1,0 +1,6 @@
+<h2 class="p-name"><a class="u-url" rel="bookmark" title="{{ item.name if item.name else item.title }}" href="{{ url }}">
+  {{ item.name if item.name else item.title }}
+</a></h2>
+{% if item.summary %}
+  <p class="p-summary">{{ item.summary | safe }}</p>
+{% endif %}
