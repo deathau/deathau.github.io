@@ -1,9 +1,8 @@
 {% from "macro-card-head.njk" import cardHeadMacro %}
 {% from "macro-summary.njk" import summaryMacro %}
-{% macro entryMacro(item, url, content, summaryOnly=false) %}
-
+{% macro entryMacro(item, author, url, content, summaryOnly=false) %}
 <div class="h-entry type-{{ item.postType }}">
-  {{ cardHeadMacro(item.author, item.date, url) }}
+  {{ cardHeadMacro(author, item.date, url) }}
   <div class="card-body">
     {{ summaryMacro(item, url) }}
     {% if item.postType == 'article' and summaryOnly %}

@@ -11,7 +11,7 @@ eleventyExcludeFromCollections: true
 <ul>
 {% for item in pagination.items %}
   <li>
-    {{ entryMacro(item.data, item.url, item.templateContent, true) }}
+    {{ entryMacro(item.data, item.data.author, item.url, item.templateContent, true) }}
   </li>
 {% endfor %}
 </ul>
