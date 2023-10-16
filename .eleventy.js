@@ -189,6 +189,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"js":"assets/js"});
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("CNAME");
+  eleventyConfig.addPassthroughCopy("did.json":".well-known/did.json");
 
   eleventyConfig.addPlugin(pluginRss);
 
