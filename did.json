@@ -11,9 +11,9 @@
       "controller": "did:web:death.id.au",
       "publicKeyJwk": {
         "kty": "EC",
-        "crv": "secp256k1",
-        "x": "qXgr6GIhqZUCVYjuZkn5FHsDjd/8MfDfIXjO6EoT/OA=",
-        "y": "qSptBXqOjumHimGqb/ffKblK89aBRymro1jtqqx/+pA="
+        "x": "_MkDh1PkhktVarLT-C1PLhopuh4E82_tGoG6sTGQkGI",
+        "y": "ybGSFU_6NR0kvskrY3yJNcRnpYyKy1YDGp_cni0219w",
+        "crv": "secp256k1"
       }
     }
   ],
