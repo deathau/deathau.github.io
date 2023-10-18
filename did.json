@@ -10,10 +10,10 @@
       "type": "JsonWebKey2020",
       "controller": "did:web:death.id.au",
       "publicKeyJwk": {
+        "crv": "P-521",
         "kty": "EC",
-        "x": "_MkDh1PkhktVarLT-C1PLhopuh4E82_tGoG6sTGQkGI",
-        "y": "ybGSFU_6NR0kvskrY3yJNcRnpYyKy1YDGp_cni0219w",
-        "crv": "secp256k1"
+        "x": "AV7Zc8WzwXPuedOESKP3qovXfqynZoysd0ppnR12gAVdMF0Hs_tCtc2N_C77oHm5KYcIW1qE_75CZO1dTCm2a9aU",
+        "y": "AXC_ELu67FGfZUA7RNwDrKEmyfvzvKNnjLcZ4X70-uD29o5NHGAQ1AUZcnLG-LUQywMCSSeH_7YijrEGrvAJbeoi"
       }
     }
   ],
