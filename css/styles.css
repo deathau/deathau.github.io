@@ -1,15 +1,15 @@
 :root {
-    --bg-rgb: 238, 238, 238;
-    --on-bg-rgb: 4, 4, 4;
-    --primary-rgb: 160, 116, 196;
-    --on-primary-rgb: 238, 238, 238;
+    --bg-rgb: 17, 17, 17;
+    --on-bg-rgb: 251, 251, 251;
+    --primary-rgb: 134, 128, 194;
+    --on-primary-rgb: 251, 251, 251;
     --bg: rgb(var(--bg-rgb));
     --on-bg: rgb(var(--on-bg-rgb));
     --primary: rgb(var(--primary-rgb));
     --on-primary: rgb(var(--on-primary-rgb));
 
-    --fade-alpha: 0.06;
-    --mute-alpha: 0.3;
+    --fade-alpha: 0.16;
+    --mute-alpha: 0.75;
     
     --bg-fade: rgba(var(--bg-rgb), var(--fade-alpha));
     --on-bg-fade: rgba(var(--on-bg-rgb), var(--fade-alpha));
@@ -22,23 +22,21 @@
     --on-primary-muted: rgba(var(--on-primary-rgb), var(--mute-alpha));
 
 }
-@media (prefers-color-scheme: dark) {
-    :root{
-        --bg-rgb: 17, 17, 17;
-        --on-bg-rgb: 251, 251, 251;
-        --on-primary-rgb: 251, 251, 251;
 
-        --fade-alpha: 0.16;
-    }
-}
 html { 
-    background-color: var(--bg); 
-    color: var(--on-bg); 
+    background-color: var(--bg);
+    color: var(--on-bg);
 }
 
 a { 
     color: var(--primary); 
     text-decoration: none;
+}
+
+.p-name, .p-nickname {
+    color: var(--on-bg);
+    text-shadow: 0 0 0.5em var(--primary-muted),
+    0 0 0.25em var(--on-bg-muted);
 }
 
 a:hover {
@@ -47,7 +45,8 @@ a:hover {
 
 body {
     line-height: 1.6;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Rubik, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 18px;
     text-align: center;
     margin: 0;
     min-height: 90vh;
@@ -76,10 +75,11 @@ img.u-featured {
 
 button.icon-button {
     line-height: 24px;
-    background-color: #666289;
-    color:#fff;
-    border:none;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border: none;
     border-radius:4px;
+    font-family: inherit;
 }
 button.icon-button>img {
     max-height: 24px;
