@@ -27,51 +27,8 @@
 
 <body>
   <main>
-    <!-- Reference for representative h-card properties: https://microformats.org/wiki/h-card -->
-<div class="h-card" rel="author">
-  <div>
-    <img class="u-photo" alt="My profile photo — an headshot of the grim reaper, traced from art by Paul Kidby" src="/assets/img/avatar-reaper-man.svg" />
-    <h1 class="p-name"> Gordon Pedersen </h1>
-    <h2>a.k.a <span class="p-nickname">death.au</span></h2>
-    <p class="p-x-pronouns muted">
-      <i><a href="https://pronouns.design" target="_blank"><img class="icon" alt="he/him" title="he/him" src="assets/img/pronouns-icon-he-white-16px.svg"></a></i>
-      <span class="p-x-pronoun-nominative">he</span> /
-      <span class="p-x-pronoun-oblique">him</span>
-    </p>
-  </div>
-  <nav>
-    <p class="p-note">
-      I am a software developer and tinkerer based in Melbourne, Australia.
-    </p>
-    <h2>Where you can find me:</h2>
-    <a class="u-url" href="acct:death.au@monrepos.casa" rel="me"></a>
-    <a class="u-url" href="https://twitter.com/death_au" rel="me"></a>
-    <a class="u-url" href="https://pkm.social/@death_au" rel="me"></a>
-    <ul>
-      <li><i class="fa fa-globe"></i> <a class="u-uid u-url" href="https://death.id.au">My website (you are here)</a></li>
-      <li><i class="omg-icon omg-fediverse"></i> <a class="u-url" href="https://monrepos.casa/profile/death.au" rel="me">Friendica (Mastodon/ActivityPub)</a></li>
-      <li><i></i>
-        <button class="icon-button button-input"
-          data-instruction="Please enter your fediverse / mastodon handle (e.g. '@user@domain.social')" 
-          data-placeholder="@user@domain.social"
-          data-success="Thanks for the follow!"
-          onsubmit="handleFollow(event.value)">
-          <img src="/assets/img/Fediverse_logo_proposal.svg" alt="Fediverse logo">
-          Follow @death.au@monrepos.casa
-        </button>
-      </li>
-      <li><i class="fa-brands fa-github"></i> <a class="u-url" href="https://github.com/deathau" rel="me">Github</a></li>
-      <li><i class="fa fa-code-branch"></i> <a class="u-url" href="https://forge.death.id.au/" rel="me">Forgejo (Git)</a></li>
-      <li><i class="fa-brands fa-linkedin"></i> <a class="u-url" href="https://www.linkedin.com/in/gordon-pedersen/">LinkedIn</a></li>
-      <li><i class="fa fa-envelope"></i> <a class="u-url" href="mailto:death.au@death.id.au">Email</a></li>
-    </ul>
-  </nav>
-</div>
-
-<article>
-  <hr>
-<h2>date: Last Modified</h2>
-<h1 class="p-name">What am I up to these days?</h1>
+    <article class="h-entry">
+  <h1 class="p-name">What am I up to these days?</h1>
 <p><small class="muted">(This is my <a href="/now">now page</a>, and if you have your own site, <a href="https://nownownow.com/about">you should make one</a>, too.)</small></p>
 <p>I've been drifting a bit lately, searching for a new purpose. More immediately, searching for some new income.</p>
 <p>I'm working on developing some games; just light mobile-friendly games, but without the constant ads and microtransactions. I've been utilising the <a href="https://dragonruby.org/toolkit/game">DragonRuby Game Toolkit</a>, but have been looking into others as well.</p>
@@ -110,36 +67,12 @@ I really need to attend to some updates.</p>
 
 </article>
 
-  <!-- <iframe src="https://monrepos.casa/profile/death.au" style="width: 100%; height: 750px; border: none; max-width: 900px; margin-bottom:40px"></iframe> -->
-
 
 
   </main>
 </body>
 <script src="/assets/js/relative-time.js"></script>
 
-<script src="/assets/js/follow.js"></script>
-  <script src="/assets/js/button-input.js"></script>
-  <script>
-    window.addEventListener('unhandledrejection', function(event) {
-      alert(event.reason)
-    })
-    function handleFollow(handle) {
-      try{
-        follow('@death.au@monrepos.casa', handle)
-      }
-      catch(e){
-        alert(e)
-      }
-    }
-    function tryFollow(user) {
-      try{
-        follow(user)
-      }
-      catch(e){
-        alert(e)
-      }
-    }
-  </script>
+
 
 </html>

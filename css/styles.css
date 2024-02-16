@@ -23,6 +23,10 @@
 
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html { 
     background-color: var(--bg);
     color: var(--on-bg);
@@ -33,10 +37,22 @@ a {
     text-decoration: none;
 }
 
+.small {
+    font-size: smaller
+}
+
 .p-name, .p-nickname {
     color: var(--on-bg);
     text-shadow: 0 0 0.5em var(--primary-muted),
     0 0 0.25em var(--on-bg-muted);
+}
+
+.p-note {
+    text-align: center;
+}
+
+.muted {
+    opacity: 50%;
 }
 
 a:hover {
@@ -47,26 +63,166 @@ body {
     line-height: 1.6;
     font-family: Rubik, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
     font-size: 18px;
-    text-align: center;
     margin: 0;
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+    padding: 2em;
+    height: 100%;
+    overflow-wrap: break-word;
+    /* min-height: 90vh; */
 }
 
 p:last-child {
     margin-block-end: 0;
 }
 
+article, .h-card {
+    display: block;
+    max-width: 42em;
+    border-radius: 1em;
+    margin: 3em auto;
+    padding: 2em;
+    background-color: #222;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='.4' numOctaves='3' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeDropShadow dx='0' dy='0' flood-color='%23888' flood-opacity='.5' stdDeviation='1'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2em;
+}
 
-img.u-photo { border-radius: 50%; max-height:200px; }
-/* .p-author img.u-photo{
-    max-height: 48px;
-} */
-ul { padding: 0; list-style: none; }
+article {
+    flex-direction: column;
+    gap: unset;
+    align-items: start;
+}
+
+.h-card>*{
+    flex: 1;
+    min-width: 17em;
+    text-align: left;
+}
+.h-card>*:first-child {
+    text-align: center;
+    /* border-right: solid 1px #888; */
+}
+
+.h-card::before, .h-card::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #e200fb, #461036, #9100ff,#bf72f0, #5600ff, #e000fb, #5d1489, #7c519d,#730275, #934eaf);
+    background-size: 300%;
+    width: calc(100% + 3px);
+    height: calc(100% + 3px);
+    z-index: -1;
+    animation: glow 30s linear infinite;
+    border-radius: 1em;
+}
+
+.h-card:after {
+    filter: blur(50px);
+}
+
+ul {
+    list-style: none;
+    padding:0;
+}
+
+.h-card>nav>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.h-card>nav li {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.h-card>nav li>i {
+    min-width:20px;
+}
+
+li::before {
+    min-width: 1.5em;
+    text-align:center;
+    padding-right:0.5em;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-weight: 600;
+}
+
+@keyframes glow {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+hr {
+    border: 0;
+    margin: 1.35em auto;
+    width: 100%;
+    background-position: 50%;
+    box-sizing: border-box;
+
+    border-width: 0 0 1px;
+    --color: var(--primary-rgb);
+    color: rgb(var(--color));
+    border-image: linear-gradient(
+        90deg,
+        rgba(var(--color), 0),
+        rgba(var(--color), 1) calc(50% - 1em),
+        rgba(var(--color), 0) calc(50% - 1em),
+        rgba(var(--color), 0) calc(50% + 1em),
+        rgba(var(--color), 1) calc(50% + 1em),
+        rgba(var(--color), 0) 100%) 0 0 100%;
+    border-style: solid;
+}
+
+hr::after {
+    content: 'Ω';
+    display: inline-block;
+    line-height: 1px;
+    height: 1px;
+    width: 1em;
+    text-align: center;
+    position:absolute;
+    left: calc(50% - 0.5em);
+  }
+
+  /* hr::before {
+    border: 1px solid white;
+    width: calc(50% - 2em);
+    content: ' ';
+    display: inline-block;
+  }
+  hr::after {
+    content: 'Ω';
+    text-align:center;
+    width:100%;
+    display:inline-block;
+  } */
+
+img.u-photo { 
+    border-radius: 50%;
+    max-height: 200px;
+    box-shadow: 0 0 1em 1px  var(--primary-muted), 0 0 0.5em 1px  var(--on-bg-muted);
+}
+
 img.u-featured { 
     display:block;
     z-index:0;
@@ -110,102 +266,22 @@ i>img{
     max-height: 1em;
     vertical-align: middle;
 }
-img.tiny-avatar {
+img.icon {
     max-height: 17px;
+    min-height: 17px;
 }
 
 img.small-avatar {
     max-height: 40px;
 }
 
-/* Pagination */
-.pagination {
-    margin: 50px auto;
+span[title] {
+    border-bottom: 1px dotted #ccc8;
+    cursor: help;
 }
-.pagination li {
-    display: inline-block;
-}
-.pagination a {
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid var(--on-bg-fade);
-}
-.pagination a.active {
-    background-color: var(--primary);
-    color: var(--on-primary);
-  }
   
-.pagination a:hover:not(.active) { background-color: var(--on-bg-fade); }
-
-.pagination a.disabled {
-    color: var(--primary-fade);
-    pointer-events: none;
-  }
-
-/* End Pagination */
-
-/* Feed Entries */
-
-.h-entry {
-    max-width: 500px;
-    min-width: 320px;
-    background-color: var(--primary-fade);
-    padding: 20px;
-    margin: 0;
-    border: 1px solid var(--on-bg-fade);
-    text-align: left;
-}
-
-.h-entry:not(:last-child) {
-    border-bottom: none;
-}
-
-.h-entry .p-author {
-    max-width: calc(100% - 80px);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    overflow: hidden;
-}
-
-.h-entry .u-photo {
-    vertical-align: baseline;
-}
-
-.h-entry .display-name {
-    display: block;
-    max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.h-entry .display-name .p-name {
-    white-space: nowrap;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: 700;
-}
-
-.h-entry .display-name .p-nickname {
-    white-space: nowrap;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: var(--on-primary-muted);
-}
-
-.h-entry .permalink {
-    float:right;
-    text-align: right;
+span[title]:hover::after {
+    content: ' (' attr(title) ')';
     font-size: 0.8em;
-    color: var(--on-primary-muted);
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width:80px;
+    opacity: 50%;
 }
-
-/* End Feed Entries */
