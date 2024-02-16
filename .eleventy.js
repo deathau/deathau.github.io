@@ -7,7 +7,7 @@ const yaml = require("js-yaml")
 
 const markdownItOptions = {
   html: true,
-  breaks: true,
+  breaks: false,
   linkify: true
 }
 
@@ -69,12 +69,24 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   eleventyConfig.addDataExtension("yaml", (contents, file) => {
-    json = yaml.load(contents)
+    const json = yaml.load(contents)
     Object.keys(json).forEach(x => json[x] = markdownIt(markdownItOptions).use(markdownItAttrs).render(json[x]))
 
     const fs = require("fs")
     json.modified = fs.statSync(file).mtime
     return json
+  });
+
+  eleventyConfig.addDataExtension("md", (contents, file) => {
+    const md = contents
+    const fs = require("fs")
+    
+    return {
+      modified: fs.statSync(file).mtime,
+      content: markdownIt(markdownItOptions).use(markdownItAttrs).render(md),
+      inputPath: file,
+      templateSyntax: "md"
+    }
   });
 
   const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs)
