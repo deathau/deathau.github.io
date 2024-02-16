@@ -3,6 +3,7 @@ const EleventyFetch = require("@11ty/eleventy-fetch")
 const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const markdownIt = require('markdown-it')
 const markdownItAttrs = require('markdown-it-attrs')
+const yaml = require("js-yaml")
 
 const markdownItOptions = {
   html: true,
@@ -67,6 +68,15 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
+  eleventyConfig.addDataExtension("yaml", (contents, file) => {
+    json = yaml.load(contents)
+    Object.keys(json).forEach(x => json[x] = markdownIt(markdownItOptions).use(markdownItAttrs).render(json[x]))
+
+    const fs = require("fs")
+    json.modified = fs.statSync(file).mtime
+    return json
+  });
+
   const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs)
   eleventyConfig.setLibrary('md', markdownLib)
 
@@ -77,7 +87,7 @@ module.exports = function(eleventyConfig) {
       output: "pub"
     },
     htmlTemplateEngine: "njk",
-    mdTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
     templateFormats: ["md","html","njk"]
   }
 };
