@@ -4,10 +4,10 @@
   ctx: function() { return this.ctx }
 }
 ---
-{% from "macro-entry.njk" import entryMacro %}
-
-{{ entryMacro(ctx(), author, url, content) }}
+<article class="h-entry">
+  {{ content | safe }}
+</article>
 
 {% layoutblock 'foot' %}
-<script src="/assets/js/relative-time.js"></script>
+
 {% endlayoutblock %}

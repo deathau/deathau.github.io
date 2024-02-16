@@ -1,6 +1,14 @@
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const EleventyFetch = require("@11ty/eleventy-fetch");
-const { mf2 } = require("microformats-parser");
+const pluginRss = require("@11ty/eleventy-plugin-rss")
+const EleventyFetch = require("@11ty/eleventy-fetch")
+const { EleventyRenderPlugin } = require("@11ty/eleventy")
+const markdownIt = require('markdown-it')
+const markdownItAttrs = require('markdown-it-attrs')
+
+const markdownItOptions = {
+  html: true,
+  breaks: true,
+  linkify: true
+}
 
 module.exports = function(eleventyConfig) {
 
@@ -57,6 +65,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({"did.json":".well-known/did.json"});
 
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+
+  const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs)
+  eleventyConfig.setLibrary('md', markdownLib)
 
   // Return your Object options:
   return {
@@ -65,6 +77,7 @@ module.exports = function(eleventyConfig) {
       output: "pub"
     },
     htmlTemplateEngine: "njk",
+    mdTemplateEngine: "njk",
     templateFormats: ["md","html","njk"]
   }
 };

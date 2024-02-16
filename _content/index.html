@@ -4,36 +4,50 @@ eleventyExcludeFromCollections: true
 ---
 <!-- Reference for representative h-card properties: https://microformats.org/wiki/h-card -->
 <div class="h-card" rel="author">
-    <img class="u-featured" src="/assets/img/banner-1500x500.png" alt="A grim reaper in a decorated cubicle, writing and daydreaming, surrounded by many other grim reapers in bland, grey, cubicles" />
-    <img class="u-photo" alt="My profile photo — a pixelated version of me" src="/assets/img/avatar-tt.svg" />
-  <h1>
-      I am <span class="p-name">Gordon Pedersen</span>, a.k.a <span class="p-nickname">death.au</span>
-  </h1>
-  <p class="p-note">
-    ...and I'm a human on the Internet.
-  </p>
-  <ul>
-    <li>
-      <button class="icon-button button-input"
-        data-instruction="Please enter your fediverse / mastodon handle (e.g. '@user@domain.social')" 
-        data-placeholder="@user@domain.social"
-        data-success="Thanks for the follow!"
-        onsubmit="handleFollow(event.value)">
-        <img src="/assets/img/Fediverse_logo_proposal.svg" alt="Fediverse logo">
-        Follow @death.au@monrepos.casa
-      </button>
-      <a class="u-url" href="acct:death.au@monrepos.casa" rel="me"></a>
-      <a class="u-url" href="https://twitter.com/death_au" rel="me"></a>
-      <a class="u-url" href="https://pkm.social/@death_au" rel="me"></a>
-    </li>
-    <li><i><img class="tiny-avatar" src="/assets/img/avatar-tt-trans.svg"></i> <a class="u-uid u-url" href="https://death.id.au">My website (you are here)</a></li>
-    <li><i><img class="tiny-avatar" src="/assets/img/Fediverse_logo_proposal.svg"></i> <a class="u-url" href="https://monrepos.casa/profile/death.au" rel="me">@death.au@monrepos.casa</a></li>
-    <li><i class="fa-brands fa-github"></i> <a class="u-url" href="https://github.com/deathau" rel="me">@deathau</a></li>
-    <li><i class="fa-brands fa-linkedin"></i> <a class="u-url" href="https://www.linkedin.com/in/gordon-pedersen/">Gordon Pedersen</a></li>
-  </ul>
-
-  <iframe src="https://monrepos.casa/profile/death.au" style="width: 100%; height: 750px; border: none; max-width: 900px; margin-bottom:40px"></iframe>
+  <div>
+    <img class="u-photo" alt="My profile photo — an headshot of the grim reaper, traced from art by Paul Kidby" src="/assets/img/avatar-reaper-man.svg" />
+    <h1 class="p-name"> Gordon Pedersen </h1>
+    <h2>a.k.a <span class="p-nickname">death.au</span></h2>
+    <p class="p-x-pronouns muted">
+      <i><a href="https://pronouns.design" target="_blank"><img class="icon" alt="he/him" title="he/him" src="assets/img/pronouns-icon-he-white-16px.svg"></a></i>
+      <span class="p-x-pronoun-nominative">he</span> /
+      <span class="p-x-pronoun-oblique">him</span>
+    </p>
+  </div>
+  <nav>
+    <p class="p-note">
+      I am a software developer and tinkerer based in Melbourne, Australia.
+    </p>
+    <h2>Where you can find me:</h2>
+    <a class="u-url" href="acct:death.au@monrepos.casa" rel="me"></a>
+    <a class="u-url" href="https://twitter.com/death_au" rel="me"></a>
+    <a class="u-url" href="https://pkm.social/@death_au" rel="me"></a>
+    <ul>
+      <li><i class="fa fa-globe"></i> <a class="u-uid u-url" href="https://death.id.au">My website (you are here)</a></li>
+      <li><i class="omg-icon omg-fediverse"></i> <a class="u-url" href="https://monrepos.casa/profile/death.au" rel="me">Friendica (Mastodon/ActivityPub)</a></li>
+      <li><i></i>
+        <button class="icon-button button-input"
+          data-instruction="Please enter your fediverse / mastodon handle (e.g. '@user@domain.social')" 
+          data-placeholder="@user@domain.social"
+          data-success="Thanks for the follow!"
+          onsubmit="handleFollow(event.value)">
+          <img src="/assets/img/Fediverse_logo_proposal.svg" alt="Fediverse logo">
+          Follow @death.au@monrepos.casa
+        </button>
+      </li>
+      <li><i class="fa-brands fa-github"></i> <a class="u-url" href="https://github.com/deathau" rel="me">Github</a></li>
+      <li><i class="fa fa-code-branch"></i> <a class="u-url" href="https://forge.death.id.au/" rel="me">Forgejo (Git)</a></li>
+      <li><i class="fa-brands fa-linkedin"></i> <a class="u-url" href="https://www.linkedin.com/in/gordon-pedersen/">LinkedIn</a></li>
+      <li><i class="fa fa-envelope"></i> <a class="u-url" href="mailto:death.au@death.id.au">Email</a></li>
+    </ul>
+  </nav>
 </div>
+
+<article>
+  {% renderFile "./_content/now.md" %}
+</article>
+
+  <!-- <iframe src="https://monrepos.casa/profile/death.au" style="width: 100%; height: 750px; border: none; max-width: 900px; margin-bottom:40px"></iframe> -->
 
 {% layoutblock 'foot' %}
 <script src="/assets/js/follow.js"></script>
