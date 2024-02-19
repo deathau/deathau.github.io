@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 17" shape-rendering="crispEdges">
+  <g id="skin">
+    <path fill="#FCC" d="M0 2h1V1h9v1h1v6h-1v1H7v1H3V9H1V8H0V2"/>
+    <path fill="#E9B6B6" d="M0 2h1V1h2v1H2v5h1v1h1v1h1v1H3V9H1V8H0V2"/>
+    <path fill="#A77" d="M0 2h1V1h1v1H1v6h2v1h1v1H3V9H1V8H0V2"/>
+    <path fill="#CE9B9B" d="M5 6h3v1H5z"/>
+    <path fill="#FCC" d="M1 13h1v1H1z"/>
+    <path fill="#E9B6B6" d="M8 13h1v1H8z"/>
+  </g>
+  <g id="eyes">
+    <path d="M3 4h1v1H3zm6 0h1v1H9z"/>
+  </g>
+  <path id="pants" fill="#006" d="M2 15h6v1H2z"/>
+  <path id="shoes" d="M2 16h2v1H2zm4 0h2v1H6z"/>
+  <g id="shirt">
+    <path fill="#2B2B2B" d="M1 11h1v-1h6v5H2v-2H1v-2"/>
+    <path fill="#232323" d="M2 13h1v2H2z"/>
+    <path fill="#333" d="M1 11h1v2H1zm6-1h1v5H7zm-2 0h2v1H5z"/>
+    <path d="M1 11h1v-1h1v1H2v1h1v1H2v-1H1v-1m3-1h1v1h1v-1h1v1H6v1H5v-1H4v-1m4 2h1v1H8v-1"/>
+  </g>
+  <g id="hair">
+    <path fill="#7B5139" d="M1 1h1V0h7v1h1v1h1v1H9V2H3v1H1V1"/>
+    <path fill="#6B4129" d="M1 1h1V0h4v1H3v1H2v1H1V1m8 1h1v1H9V2"/>
+    <path fill="#2C0200" d="M1 1h1V0h1v1H2v1H1v3H0V2h1V1"/>
+  </g>
+  <g id="beard">
+    <path fill="#A86624" d="M4 8h5V7h1v2H9v1H8v1H4V8"/>
+    <path fill="#985614" d="M4 8h1v1h3v2H4V8m5 0h1v1H9V8"/>
+    <path fill="#551300" d="M3 7h1v2h1v1H4V9H3V7"/>
+  </g>
+</svg>
