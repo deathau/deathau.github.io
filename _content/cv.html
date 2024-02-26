@@ -1,0 +1,107 @@
+---
+layout: layout-main.njk
+eleventyExcludeFromCollections: true
+---
+<section class="h-resume">
+  <div class="card main glow">
+    <a class="p-contact h-card" href="https://death.id.au">
+      <img class="u-photo" alt="My profile photo — a pixelated version of me circa 2024 (post haircut!)" src="/assets/img/2024-avatar-tt.svg" />
+      <h1> This is <span class="p-name">Gordon Pedersen</span>'s <span class="cv-title">CV</span> </h1>
+    </a>
+  </div>
+  <div class="card">
+    <div>
+      <h2>Education</h2>
+      <p class="h-event p-education">
+        <strong class="p-name">Bachelor of Computer Science for Games Technology</strong> <br />
+        <em class="p-location">La Trobe University</em> <br />
+        <time class="dt-start" datetime="2004">2004</time> - <time class="dt-end" datetime="2008">2008</time>
+      </p>
+    </div>
+    <div>
+      <h2>Experience</h2>
+      <p class="h-event p-experience">
+        <strong class="p-name">Tutor (various courses)</strong> <br />
+        <em class="p-location">La Trobe University</em> <br />
+        <time class="dt-start" datetime="2006">2006</time> - <time class="dt-end" datetime="2008">2008</time>
+      </p>
+      <p class="h-event p-experience">
+        <strong class="p-name">Co-founder, Senior Software Architect, Head of Front-End</strong> <br />
+        <em class="p-location">Aerion Technologies</em> <br />
+        <time class="dt-start" datetime="2008">2008</time> - <time class="dt-end" datetime="2023">2023</time>
+      </p>
+    </div>
+    <div>
+      <h2>Skills and Preferences</h2>
+      <p>
+        It's hard to know what to include in a list of skills, so I've resorted
+        to listing things I particularly enjoy working on and with
+      </p>
+      <ul style="columns:2">
+        <li class="p-skill">Learning new things</li>
+        <li class="p-skill">CSS</li>
+        <li class="p-skill">HTML</li>
+        <li class="p-skill">Tinkering</li>
+        <li class="p-skill">JavaScript</li>
+        <li class="p-skill">TypeScript</li>
+        <li class="p-skill">C#</li>
+        <li class="p-skill">PHP</li>
+        <li class="p-skill">Ruby (still learning)</li>
+        <li class="p-skill">UX Design</li>
+        <li class="p-skill">UI Design</li>
+        <li class="p-skill">Software Architecture</li>
+        <li class="p-skill">LEGO</li>
+        <li class="p-skill">ActivityPub</li>
+        <li class="p-skill">.NET</li>
+        <li class="p-skill">Video Games</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card p-summary">
+    <p>
+      I helped found <a href="https://aerion.com.au" class="p-affiliation h-card p-name">Aerion Technologies</a>
+      while I was still in University.
+    </p>
+      Throughout my 15 years there, I gained a significant amount of experience 
+      across many different aspects of software development. Beyond programming 
+      in many different languages, I have also had experience with UX / UI design,
+      requirements gathering, documentation, project management and so much more.
+    </p>
+    <p>
+      I have personally overseen all aspects of a project, from initial client meetings
+      and discovery, through design and clarification, front-end and back-end development,
+      all the way through to DevOps, deployment and user acceptance testing. I've worked
+      with and alongside businesses from many different disciplines including 
+      international architecture and construction companies as well as entrepeneurs
+      needing technical assistance to see their idea through and small businesses who
+      just need an online presence.
+    </p>
+    <p>
+      I'm a tinkerer by nature. I have many personal side project ideas and things
+      I am interested in. I've done quite a bit of work in the early days of
+      <a href="https://obsidian.md/" class="p-affiliation h-card p-name">Obsidian</a>,
+      building in CSS tweaks and new functionality before themes and plugins were
+      officially supported; helping shape the direction of some of those features.
+    </p>
+    <p>
+      Also, check out my <a href="https://www.linkedin.com/in/gordon-pedersen/" class="u-url">LinkedIn</a>
+      for endorsements and such. (I'm not very good at LinkedIn, tbh)
+    </p>
+    <p>
+      Below I have listed some of the projects I have been involved with, both with
+      Aerion and in my own free time. This list isn't exhaustive, but does represent
+      a cross-section of my varied experience and skills. (I'm still working on 
+      populating this)
+    </p>
+  </div>
+
+  <div class="card main glow" id="portfolio">
+    <h1>Portfolio</h1>
+  </div>
+
+  {%- for post in collections.portfolio -%}
+    <article>
+      {{ post.content | safe }}
+    </article>
+  {%- endfor -%}
+</section>

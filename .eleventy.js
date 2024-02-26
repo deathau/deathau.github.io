@@ -2,7 +2,6 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const EleventyFetch = require("@11ty/eleventy-fetch")
 const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const markdownIt = require('markdown-it')
-const markdownItAttrs = require('markdown-it-attrs')
 const yaml = require("js-yaml")
 
 const markdownItOptions = {
@@ -12,6 +11,13 @@ const markdownItOptions = {
 }
 
 module.exports = function(eleventyConfig) {
+
+  // Filter source file names using a glob
+  eleventyConfig.addCollection("portfolio", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("_content/portfolio/**").filter(function(item) {
+      return !item.data.draft
+    })
+  });
 
   eleventyConfig.addFilter("formatDate", function(value) { 
     try{
@@ -68,9 +74,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
+  const markdownLib = markdownIt(markdownItOptions)
+    .use(require('markdown-it-bracketed-spans'))
+    .use(require('markdown-it-attrs'))
+  eleventyConfig.setLibrary('md', markdownLib)
+
   eleventyConfig.addDataExtension("yaml", (contents, file) => {
     const json = yaml.load(contents)
-    Object.keys(json).forEach(x => json[x] = markdownIt(markdownItOptions).use(markdownItAttrs).render(json[x]))
+    Object.keys(json).forEach(x => json[x] = markdownLib.render(json[x]))
 
     const fs = require("fs")
     json.modified = fs.statSync(file).mtime
@@ -83,14 +94,11 @@ module.exports = function(eleventyConfig) {
     
     return {
       modified: fs.statSync(file).mtime,
-      content: markdownIt(markdownItOptions).use(markdownItAttrs).render(md),
+      content: markdownLib.render(md),
       inputPath: file,
       templateSyntax: "md"
     }
   });
-
-  const markdownLib = markdownIt(markdownItOptions).use(markdownItAttrs)
-  eleventyConfig.setLibrary('md', markdownLib)
 
   // Return your Object options:
   return {
