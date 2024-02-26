@@ -102,7 +102,7 @@ p:last-child {
     margin-block-end: 0;
 }
 
-article, .h-card {
+article, div.h-card, .card {
     display: block;
     max-width: 42em;
     border-radius: 1em;
@@ -118,24 +118,29 @@ article, .h-card {
     gap: 2em;
 }
 
-article {
+article, .card:not(.main) {
     flex-direction: column;
     gap: unset;
     align-items: start;
     box-shadow: 1px 2px 0.5em 1px var(--shadow);
 }
 
-.h-card>*{
+a.h-card {
+    text-decoration: none;
+    color: inherit;
+}
+
+div.h-card>*, .card>*{
     flex: 1;
     min-width: 17em;
     text-align: left;
 }
-.h-card>*:first-child {
+div.h-card>*:first-child, .card.main>*:first-child {
     text-align: center;
     /* border-right: solid 1px #888; */
 }
 
-.h-card::before, .h-card::after {
+div.h-card::before, div.h-card::after, .glow::before, .glow::after {
     content: '';
     position: absolute;
     left: -2px;
@@ -149,29 +154,26 @@ article {
     border-radius: 1em;
 }
 
-.h-card:after {
+div.h-card:after, .glow::after {
     filter: blur(50px);
 }
 
-ul {
+div.h-card>nav>ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
     list-style: none;
     padding:0;
 }
 
-.h-card>nav>ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-}
-
-.h-card>nav li {
+div.h-card>nav li {
     display: flex;
     flex-direction: row;
     gap: 0.5em;
     align-items: center;
 }
 
-.h-card>nav li>i {
+div.h-card>nav li>i {
     min-width:20px;
 }
 
@@ -236,6 +238,7 @@ hr::after {
 img.u-photo { 
     border-radius: 50%;
     max-height: 200px;
+    max-width: 200px;
     box-shadow: 0 0 1em 1px  var(--primary-muted), 0 0 0.5em 1px var(--white-glow);
 }
 
@@ -301,4 +304,43 @@ span[title]:hover::after {
     content: ' (' attr(title) ')';
     font-size: 0.8em;
     opacity: 50%;
+}
+
+
+
+.personal::before {
+    display: inline-block;
+    height: 1em;
+    width: 18px;
+    margin-right: 0.5em;
+    content: '';
+    background-image: url('/assets/img/2024-avatar-tt-min.svg')
+}
+
+
+.aerion::before {
+    display: inline-block;
+    height: 1em;
+    width: 20px;
+    margin-right: 0.5em;
+    content: '';
+    background-image: url('/assets/img/aerion.svg')
+}
+
+.obsidian-plugin::before {
+    display: inline-block;
+    height: 1em;
+    width: 20px;
+    margin-right: 0.5em;
+    content: '';
+    background-image: url('/assets/img/obsidian-plugin.svg')
+}
+
+.obsidian-theme::before {
+    display: inline-block;
+    height: 1em;
+    width: 22px;
+    margin-right: 0.5em;
+    content: '';
+    background-image: url('/assets/img/obsidian-theme.svg')
 }
