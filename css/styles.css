@@ -158,6 +158,11 @@ div.h-card:after, .glow::after {
     filter: blur(50px);
 }
 
+li[class^="fa-"] {
+    list-style: none;
+    margin-left:-40px;
+}
+
 div.h-card>nav>ul {
     display: flex;
     flex-direction: column;
