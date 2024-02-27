@@ -28,12 +28,12 @@ like [ActivityPub](https://activitypub.rocks) and the
 - [Arcade Paradise](https://www.igdb.com/g/344n){.u-playthrough-of} {.fa-xbox}
 - [Marvel Snap](https://www.igdb.com/g/4c2v) {.fa-mobile-screen}
 
-### What I’m <span title="or listening to as an audiobook">reading</span>: {.fa-book-bookmark}
+### What I’m [reading]{title="or listening to as an audiobook"}: {.fa-book-bookmark}
 - [Jedi: Battle Scars](https://openlibrary.org/works/OL28799340W){.u-read-of} by [Sam Maggs](https://openlibrary.org/authors/OL7541563A) {.fa-headphones}
 
 ### What I’m watching: {.fa-film}
-- [Hazbin Hotel](https://www.imdb.com/title/tt7216636/){.u-watch-of} {.fa-tv}
-- [The Legend of Vox Machina](https://www.imdb.com/title/tt11247158/){.u-watch-of} {.fa-tv}
+- [Severence](https://www.imdb.com/title/tt11280740/){.u-watch-of} {.fa-tv}
+- [Star Wars: The Bad Batch](https://www.imdb.com/title/tt12708542/){.u-watch-of} {.fa-tv}
 - [Andor](https://www.imdb.com/title/tt9253284/){.u-watch-of} {.fa-tv}
 
 ### What I’m making: {.fa-screwdriver-wrench}
@@ -42,4 +42,4 @@ like [ActivityPub](https://activitypub.rocks) and the
 
 ### What I’m exploring: {.fa-binoculars}
 - Personal web pages and the ActivityPub-powered Fediverse {.fa-globe}
-- A part-time job to make some money {.fa-money-bill}
+- A job to make some money {.fa-money-bill}
