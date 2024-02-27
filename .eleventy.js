@@ -70,6 +70,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy({"did.json":".well-known/did.json"});
+  eleventyConfig.addPassthroughCopy({"atproto-did":".well-known/atproto-did"});
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
