@@ -25,6 +25,7 @@ like [ActivityPub](https://activitypub.rocks) and the
 
 ### What I’m playing: {.fa-gamepad}
 - [Star Wars Jedi: Survivor](https://www.igdb.com/g/4b7o){.u-playthrough-of} {.fa-xbox}
+- [Arcade Paradise](https://www.igdb.com/g/344n){.u-playthrough-of} {.fa-xbox}
 - [Marvel Snap](https://www.igdb.com/g/4c2v) {.fa-mobile-screen}
 
 ### What I’m <span title="or listening to as an audiobook">reading</span>: {.fa-book-bookmark}
