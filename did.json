@@ -4,6 +4,9 @@
     "https://w3id.org/security/suites/jws-2020/v1"
   ],
   "id": "did:web:death.id.au",
+  "alsoKnownAs": [
+    "at://death.id.au"
+  ],
   "verificationMethod": [
     {
       "id": "did:web:death.id.au#main-key",
