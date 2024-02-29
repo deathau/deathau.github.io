@@ -15,5 +15,12 @@
       "controller": "did:web:death.id.au",
       "publicKeyMultibase": "zQ3shhXw9EW5JHowCSXrSPYTZbUQws2gUxnTtysjwYJQMByQX"
     }
+  ],
+  "service": [
+    {
+      "id": "#atproto_pds",
+      "type": "AtprotoPersonalDataServer",
+      "serviceEndpoint": "https://shiitake.us-east.host.bsky.network"
+    }
   ]
 }
