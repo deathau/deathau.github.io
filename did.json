@@ -1,7 +1,9 @@
 {
   "@context": [
     "https://www.w3.org/ns/did/v1",
-    "https://w3id.org/security/suites/jws-2020/v1"
+    "https://w3id.org/security/suites/jws-2020/v1",
+    "https://w3id.org/security/multikey/v1",
+    "https://w3id.org/security/suites/secp256k1-2019/v1"
   ],
   "id": "did:web:death.id.au",
   "alsoKnownAs": [
@@ -13,11 +15,17 @@
       "type": "JsonWebKey2020",
       "controller": "did:web:death.id.au",
       "publicKeyJwk": {
-        "crv": "P-521",
         "kty": "EC",
-        "x": "AV7Zc8WzwXPuedOESKP3qovXfqynZoysd0ppnR12gAVdMF0Hs_tCtc2N_C77oHm5KYcIW1qE_75CZO1dTCm2a9aU",
-        "y": "AXC_ELu67FGfZUA7RNwDrKEmyfvzvKNnjLcZ4X70-uD29o5NHGAQ1AUZcnLG-LUQywMCSSeH_7YijrEGrvAJbeoi"
+        "x": "Kv5JTxTwSzhBzkRmLZKKQlFjC2IRJ7R6tMGqUTqkIyQ",
+        "y": "on7R7-XT8R-oPqtCam_5nETk3J6WUcrL4tK_VGl1zhc",
+        "crv": "secp256k1"
       }
+    },
+    {
+      "id": "did:web:death.id.au#atproto",
+      "type": "Multikey",
+      "controller": "did:web:death.id.au",
+      "publicKeyMultibase": "zQ3shhXw9EW5JHowCSXrSPYTZbUQws2gUxnTtysjwYJQMByQX"
     }
   ],
   "authentication": [
@@ -25,5 +33,12 @@
   ],
   "assertionMethod": [
     "did:web:death.id.au#main-key"
+  ],
+  "service": [
+    {
+      "id": "#atproto_pds",
+      "type": "AtprotoPersonalDataServer",
+      "serviceEndpoint": "https://bsky.social"
+    }
   ]
 }
