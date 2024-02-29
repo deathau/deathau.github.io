@@ -11,28 +11,11 @@
   ],
   "verificationMethod": [
     {
-      "id": "did:web:death.id.au#main-key",
-      "type": "JsonWebKey2020",
-      "controller": "did:web:death.id.au",
-      "publicKeyJwk": {
-        "kty": "EC",
-        "x": "Kv5JTxTwSzhBzkRmLZKKQlFjC2IRJ7R6tMGqUTqkIyQ",
-        "y": "on7R7-XT8R-oPqtCam_5nETk3J6WUcrL4tK_VGl1zhc",
-        "crv": "secp256k1"
-      }
-    },
-    {
       "id": "did:web:death.id.au#atproto",
       "type": "Multikey",
       "controller": "did:web:death.id.au",
       "publicKeyMultibase": "zQ3shhXw9EW5JHowCSXrSPYTZbUQws2gUxnTtysjwYJQMByQX"
     }
-  ],
-  "authentication": [
-    "did:web:death.id.au#main-key"
-  ],
-  "assertionMethod": [
-    "did:web:death.id.au#main-key"
   ],
   "service": [
     {
