@@ -27,6 +27,7 @@ like [ActivityPub](https://activitypub.rocks) and the
 - [Star Wars Jedi: Survivor](https://www.igdb.com/g/4b7o){.u-playthrough-of} {.fa-xbox}
 - [Arcade Paradise](https://www.igdb.com/g/344n){.u-playthrough-of} {.fa-xbox}
 - [Marvel Snap](https://www.igdb.com/g/4c2v) {.fa-mobile-screen}
+- [Havest101: Farm Deck Building](https://play.google.com/store/apps/details/Harvest101_Farming_Card_Game?id=com.banjihagames.farmstone) {.fa-mobile-screen}
 
 ### What I’m [reading]{title="or listening to as an audiobook"}: {.fa-book-bookmark}
 - [Jedi: Battle Scars](https://openlibrary.org/works/OL28799340W){.u-read-of} by [Sam Maggs](https://openlibrary.org/authors/OL7541563A) {.fa-headphones}
