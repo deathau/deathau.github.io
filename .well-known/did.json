@@ -2,7 +2,8 @@
   "@context": [
     "https://www.w3.org/ns/did/v1",
     "https://w3id.org/security/multikey/v1",
-    "https://w3id.org/security/suites/secp256k1-2019/v1"
+    "https://w3id.org/security/suites/secp256k1-2019/v1",
+    "https://w3id.org/security/suites/jws-2020/v1"
   ],
   "id": "did:web:death.id.au",
   "alsoKnownAs": [
@@ -14,13 +15,30 @@
       "type": "Multikey",
       "controller": "did:web:death.id.au",
       "publicKeyMultibase": "zQ3shhXw9EW5JHowCSXrSPYTZbUQws2gUxnTtysjwYJQMByQX"
+    },
+    {
+      "id": "did:web:death.id.au#main-key",
+      "type": "JsonWebKey2020",
+      "controller": "did:web:death.id.au",
+      "publicKeyJwk": {
+        "kty": "EC",
+        "x": "Kv5JTxTwSzhBzkRmLZKKQlFjC2IRJ7R6tMGqUTqkIyQ",
+        "y": "on7R7-XT8R-oPqtCam_5nETk3J6WUcrL4tK_VGl1zhc",
+        "crv": "secp256k1"
+      }
     }
+  ],
+  "authentication": [
+    "did:web:death.id.au#main-key"
+  ],
+  "assertionMethod": [
+    "did:web:death.id.au#main-key"
   ],
   "service": [
     {
       "id": "#atproto_pds",
       "type": "AtprotoPersonalDataServer",
-      "serviceEndpoint": "https://shiitake.us-east.host.bsky.network"
+      "serviceEndpoint": "https://bsky.social"
     }
   ]
 }
