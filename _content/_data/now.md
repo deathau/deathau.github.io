@@ -41,5 +41,5 @@ like [ActivityPub](https://activitypub.rocks) and the
 - This website {.fa-globe}
 
 ### What I’m exploring: {.fa-binoculars}
-- Personal web pages and the ActivityPub-powered Fediverse {.fa-globe}
+- Personal web pages and the ActivityPub-(or atproto-)powered Fediverse {.fa-globe}
 - A job to make some money {.fa-money-bill}
