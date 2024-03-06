@@ -100,8 +100,6 @@ eleventyExcludeFromCollections: true
   </div>
 
   {%- for post in collections.portfolio -%}
-    <article>
-      {{ post.content | safe }}
-    </article>
+    {%- include "portfolio-item.njk" -%}
   {%- endfor -%}
 </section>

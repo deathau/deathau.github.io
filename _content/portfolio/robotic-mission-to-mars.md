@@ -1,7 +1,11 @@
-## Robotic Mission to Mars {.aerion}
-
-Skills: [C#]{.p-skill} [ASP]{.p-skill}[.NET]{.p-skill} [MVC3]{.p-skill}, [HTML]{.p-skill}, 
-[CSS]{.p-skill}, [JavaScript]{.p-skill}, [AJAX]{.p-skill}, [Computer Vision]{.p-skill}
+---
+title: Robotic Mission to Mars
+type: aerion
+skills: [C#, ASP.NET, MVC3, HTML, CSS, JavaScript, AJAX, Computer Vision]
+link: https://www.vssec.vic.edu.au/rmtm-challenge-enrichment/
+image: https://www.vssec.vic.edu.au/wp-content/uploads/2017/12/detail-image-3-3.jpg
+summary: An interactive educational game which simulates a Robotic Mission to Mars, including control of a real-life robot!
+---
 
 This was one of my favourite projects to work on, despite the frustrations.
 A cloud-based application for the Victorian Space Science Education Center (VSSEC),

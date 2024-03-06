@@ -1,5 +1,11 @@
-## Sliding Panes (Andy Matuschak Mode) {.obsidian-plugin}
-Skills: [CSS]{.p-skill}, [JavaScript]{.p-skill}, [HTML]{.p-skill}
+---
+image: https://github.com/deathau/sliding-panes-obsidian/raw/master/screenshot.gif
+title: Sliding Panes (Andy Matuschak Mode)
+type: obsidian-plugin
+skills: [CSS, JavaScript, HTML]
+link: https://github.com/deathau/sliding-panes-obsidian
+summary: A unique way to view open panes in Obsidian
+---
 
 In early 2020, I found myself inspired to try and collect my thoughts in a
 collection of linked notes. I was mostly inspired by [Andy Matuschak](https://notes.andymatuschak.org/)

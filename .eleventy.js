@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig) {
   // Filter source file names using a glob
   eleventyConfig.addCollection("portfolio", function(collectionApi) {
     return collectionApi.getFilteredByGlob("_content/portfolio/**").filter(function(item) {
-      return !item.data.draft
+      return !(item.data.draft || item.data.type == "draft")
     })
   });
 

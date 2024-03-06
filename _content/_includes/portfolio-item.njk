@@ -1,0 +1,30 @@
+<article>
+  <h2 class="{{ post.data.type }}">
+    {{post.data.title}}
+  </h2>
+
+  {%- if post.data.link -%}
+    <a href="{{ post.data.link }}" title="{{ post.data.title }}" target="_blank">{{ post.data.link }}</a>
+  {%- endif -%}
+
+  {%- if post.data.image -%}
+  <img class="featured" src="{{ post.data.image }}" alt="A picture of {{post.data.title}}" >
+  {%- endif -%}
+
+  {%- if(post.data.skills) -%}
+  <p class="skills">
+    <strong>Skills:</strong>
+    <span class="p-skill">{{ post.data.skills.join('</span>, <span class="p-skill">') | safe }}</span>
+  </p>
+  {%- endif -%}
+
+  {%- if(post.data.summary) -%}
+  <details>
+    <summary>{{ post.data.summary }}</summary>
+  {%- endif -%}
+  {{ post.content | safe }}
+  {%- if(post.data.summary) -%}
+  </details>
+  {%- endif -%}
+
+</article>
