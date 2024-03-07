@@ -1,8 +1,14 @@
 I've been drifting a bit lately, searching for a new purpose.
 More immediately, searching for some new income.
 
-I'm working on developing some games; just light mobile-friendly games,
-but without the constant ads and microtransactions. I've been utilising the
+I'm actively looking for a new job (hire me?), and a part of that effort is
+developing this website and telling the story of more of the projects I've worked
+on over the years. I want to show potential employers that I have a very diverse
+range of skills.
+
+I'm still working on developing some games; it's just taken a lower priority for
+now. Just light mobile-friendly games, but without the constant ads and
+microtransactions. I've been utilising the
 [DragonRuby Game Toolkit](https://dragonruby.org/toolkit/game), but have been
 looking into others as well.
 
@@ -24,13 +30,12 @@ like [ActivityPub](https://activitypub.rocks) and the
 ---
 
 ### What I’m playing: {.fa-gamepad}
-- [Star Wars Jedi: Survivor](https://www.igdb.com/g/4b7o){.u-playthrough-of} {.fa-xbox}
 - [Arcade Paradise](https://www.igdb.com/g/344n){.u-playthrough-of} {.fa-xbox}
 - [Marvel Snap](https://www.igdb.com/g/4c2v) {.fa-mobile-screen}
 - [Havest101: Farm Deck Building](https://play.google.com/store/apps/details/Harvest101_Farming_Card_Game?id=com.banjihagames.farmstone) {.fa-mobile-screen}
 
 ### What I’m [reading]{title="or listening to as an audiobook"}: {.fa-book-bookmark}
-- [Jedi: Battle Scars](https://openlibrary.org/works/OL28799340W){.u-read-of} by [Sam Maggs](https://openlibrary.org/authors/OL7541563A) {.fa-headphones}
+- [Dooku - Jedi Lost](https://openlibrary.org/works/OL20662988W){.u-read-of} by [Cavan Scott](https://openlibrary.org/authors/OL3089547A) {.fa-headphones}
 
 ### What I’m watching: {.fa-film}
 - [Severence](https://www.imdb.com/title/tt11280740/){.u-watch-of} {.fa-tv}
@@ -43,4 +48,4 @@ like [ActivityPub](https://activitypub.rocks) and the
 
 ### What I’m exploring: {.fa-binoculars}
 - Personal web pages and the ActivityPub-(or atproto-)powered Fediverse {.fa-globe}
-- A job to make some money {.fa-money-bill}
+- A job to make some money (please hire me!) {.fa-money-bill}
