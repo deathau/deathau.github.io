@@ -1,53 +1,15 @@
-:root {
-    --bg-rgb: 17, 17, 17;
-    --on-bg-rgb: 251, 251, 251;
-    --primary-rgb: 134, 128, 194;
-    --on-primary-rgb: 251, 251, 251;
-    --bg: rgb(var(--bg-rgb));
-    --on-bg: rgb(var(--on-bg-rgb));
-    --primary: rgb(var(--primary-rgb));
-    --on-primary: rgb(var(--on-primary-rgb));
-
-    --fade-alpha: 0.2;
-    --mute-alpha: 0.5;
-    
-    --bg-fade: rgba(var(--bg-rgb), var(--fade-alpha));
-    --on-bg-fade: rgba(var(--on-bg-rgb), var(--fade-alpha));
-    --primary-fade: rgba(var(--primary-rgb), var(--fade-alpha));
-    --on-primary-fade: rgba(var(--on-primary-rgb), var(--fade-alpha));
-
-    --bg-muted: rgba(var(--bg-rgb), var(--mute-alpha));
-    --on-bg-muted: rgba(var(--on-bg-rgb), var(--mute-alpha));
-    --primary-muted: rgba(var(--primary-rgb), var(--mute-alpha));
-    --on-primary-muted: rgba(var(--on-primary-rgb), var(--mute-alpha));
-
-    --paper-texture-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='.4' numOctaves='3' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeDropShadow dx='0' dy='0' flood-color='%23888' flood-opacity='.5' stdDeviation='1'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
-    --white-glow: rgba(251,251,251,var(--mute-alpha));
-    --shadow: rgba(17,17,17,var(--fade-alpha))
-
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-rgb: 251, 251, 251;
-        --on-bg-rgb: 17, 17, 17;
-        --mute-alpha: 0.6;
-        --primary-rgb: 90, 83, 172;
-        --paper-texture-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='.4' numOctaves='3' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeDropShadow dx='0' dy='0' flood-color='%23888' flood-opacity='.5' stdDeviation='1'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.275 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E")
-    }
-
-    img[src="assets/img/pronouns-icon-he-white-16px.svg"] {
-        filter: invert()
-    }
-}
+@import url('theme.css');
+@import url('theme-button.css');
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-html { 
-    background-color: var(--bg);
-    color: var(--on-bg);
+body { 
+  background-color: var(--bg);
+  color: var(--on-bg);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
 }
 
 a { 
@@ -209,24 +171,23 @@ li::before, h3::before {
 }
 
 hr {
-    border: 0;
-    margin: 1.35em auto;
-    width: 100%;
-    background-position: 50%;
-    box-sizing: border-box;
+  border: 0;
+  margin: 1.35em auto;
+  width: 100%;
+  background-position: 50%;
+  box-sizing: border-box;
 
-    border-width: 0 0 1px;
-    --color: var(--primary-rgb);
-    color: rgb(var(--color));
-    border-image: linear-gradient(
-        90deg,
-        rgba(var(--color), 0),
-        rgba(var(--color), 1) calc(50% - 1em),
-        rgba(var(--color), 0) calc(50% - 1em),
-        rgba(var(--color), 0) calc(50% + 1em),
-        rgba(var(--color), 1) calc(50% + 1em),
-        rgba(var(--color), 0) 100%) 0 0 100%;
-    border-style: solid;
+  border-width: 0 0 1px;
+  color: var(--primary);
+  border-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary) calc(50% - 1em),
+    transparent calc(50% - 1em),
+    transparent calc(50% + 1em),
+    var(--primary) calc(50% + 1em),
+    transparent 100%) 0 0 100%;
+  border-style: solid;
 }
 
 hr::after {
@@ -238,7 +199,7 @@ hr::after {
     text-align: center;
     position:absolute;
     left: calc(50% - 0.5em);
-  }
+}
 
 img.u-photo { 
     border-radius: 50%;
@@ -365,4 +326,8 @@ details>summary::after{
 
 details[open] > summary::after {
     content: 'less'
+}
+
+i>a {
+  color: inherit;
 }
