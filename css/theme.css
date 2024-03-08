@@ -1,7 +1,7 @@
 :root {
 
   /* dark theme */
-  --dark-bg: rgb(17, 17, 17);
+  --dark-bg: #111111;
   --dark-on-bg: rgb(251, 251, 251);
   --dark-primary: rgb(134, 128, 194);
   --dark-on-primary: var(--dark-on-bg);
@@ -9,7 +9,7 @@
   --dark-fade-alpha: 0.2;
   
   /* light theme */
-  --light-bg: rgb(251, 251, 251);
+  --light-bg: #fbfbfb;
   --light-on-bg: rgb(17, 17, 17);
   --light-primary: rgb(90, 83, 172);
   --light-on-primary: rgb(251, 251, 251);
@@ -25,14 +25,14 @@
   --fade-alpha: calc(calc(var(--dark-fade-alpha) * var(--dark-theme)) + calc(var(--light-fade-alpha) * var(--light-theme)));
   
   /* adjustments */
-  --bg-muted: color-mix(in srgb, transparent, var(--bg) 75%);
-  --on-bg-muted: color-mix(in srgb, transparent, var(--on-bg) 75%);
-  --primary-muted: color-mix(in srgb, transparent, var(--primary) 75%);
-  --on-primary-muted: color-mix(in srgb, transparent, var(--on-primary) 75%);
-  --bg-fade: color-mix(in srgb, transparent, var(--bg) 75%);
-  --on-bg-fade: color-mix(in srgb, transparent, var(--on-bg) 75%);
-  --primary-fade: color-mix(in srgb, transparent, var(--primary) 75%);
-  --on-primary-fade: color-mix(in srgb, transparent, var(--on-primary) 75%);
+  --bg-muted: color-mix(in srgb, transparent, var(--bg) var(--mute-alpha));
+  --on-bg-muted: color-mix(in srgb, transparent, var(--on-bg) var(--mute-alpha));
+  --primary-muted: color-mix(in srgb, transparent, var(--primary) var(--mute-alpha));
+  --on-primary-muted: color-mix(in srgb, transparent, var(--on-primary) var(--mute-alpha));
+  --bg-fade: color-mix(in srgb, transparent, var(--bg) var(--fade-alpha));
+  --on-bg-fade: color-mix(in srgb, transparent, var(--on-bg) var(--fade-alpha));
+  --primary-fade: color-mix(in srgb, transparent, var(--primary) var(--fade-alpha));
+  --on-primary-fade: color-mix(in srgb, transparent, var(--on-primary) var(--fade-alpha));
   
   /* misc */
   --white-glow: rgba(251,251,251,var(--mute-alpha));
