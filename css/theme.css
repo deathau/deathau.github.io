@@ -1,0 +1,67 @@
+:root {
+
+  /* dark theme */
+  --dark-bg: rgb(17, 17, 17);
+  --dark-on-bg: rgb(251, 251, 251);
+  --dark-primary: rgb(134, 128, 194);
+  --dark-on-primary: var(--dark-on-bg);
+  --dark-mute-alpha: 0.5;
+  --dark-fade-alpha: 0.2;
+  
+  /* light theme */
+  --light-bg: rgb(251, 251, 251);
+  --light-on-bg: rgb(17, 17, 17);
+  --light-primary: rgb(90, 83, 172);
+  --light-on-primary: rgb(251, 251, 251);
+  --light-mute-alpha: 0.6;
+  --light-fade-alpha: 0.2;
+
+  /* the actual theme (don't need to edit this) */
+  --bg: color-mix(in srgb, var(--dark-bg) var(--dark-theme), var(--light-bg) var(--light-theme));
+  --on-bg: color-mix(in srgb, var(--dark-on-bg) var(--dark-theme), var(--light-on-bg) var(--light-theme));
+  --primary: color-mix(in srgb, var(--dark-primary) var(--dark-theme), var(--light-primary) var(--light-theme));
+  --on-primary: color-mix(in srgb, var(--dark-on-primary) var(--dark-theme), var(--light-on-primary) var(--light-theme));
+  --mute-alpha: calc(calc(var(--dark-mute-alpha) * var(--dark-theme)) + calc(var(--light-mute-alpha) * var(--light-theme)));
+  --fade-alpha: calc(calc(var(--dark-fade-alpha) * var(--dark-theme)) + calc(var(--light-fade-alpha) * var(--light-theme)));
+  
+  /* adjustments */
+  --bg-muted: color-mix(in srgb, transparent, var(--bg) 75%);
+  --on-bg-muted: color-mix(in srgb, transparent, var(--on-bg) 75%);
+  --primary-muted: color-mix(in srgb, transparent, var(--primary) 75%);
+  --on-primary-muted: color-mix(in srgb, transparent, var(--on-primary) 75%);
+  --bg-fade: color-mix(in srgb, transparent, var(--bg) 75%);
+  --on-bg-fade: color-mix(in srgb, transparent, var(--on-bg) 75%);
+  --primary-fade: color-mix(in srgb, transparent, var(--primary) 75%);
+  --on-primary-fade: color-mix(in srgb, transparent, var(--on-primary) 75%);
+  
+  /* misc */
+  --white-glow: rgba(251,251,251,var(--mute-alpha));
+  --shadow: rgba(17,17,17,var(--fade-alpha));
+  --paper-texture-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='.4' numOctaves='3' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeDropShadow dx='0' dy='0' flood-color='%23888' flood-opacity='.5' stdDeviation='1'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+  
+  --transition: .4s;
+
+}
+
+/* switching values for themes */
+:root {
+  --dark-theme: 0%;
+  --light-theme: 100%;
+}
+
+:root:has(input[type="checkbox"]#theme:checked){
+  --dark-theme: 100%;
+  --light-theme: 0%;
+}
+
+@media (prefers-color-scheme: dark){
+  :root {
+    --dark-theme:100%;
+    --light-theme:0%;
+  }
+  :root:has(input[type="checkbox"]#theme:checked){
+    --dark-theme: 0%;
+    --light-theme: 100%;
+  }
+}
+
