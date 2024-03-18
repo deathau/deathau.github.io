@@ -30,17 +30,15 @@ like [ActivityPub](https://activitypub.rocks) and the
 ---
 
 ### What I’m playing: {.fa-gamepad}
-- [Arcade Paradise](https://www.igdb.com/g/344n){.u-playthrough-of} {.fa-xbox}
+- [Loop Hero](https://www.igdb.com/g/317h){.u-playthrough-of} {.fa-xbox}
 - [Marvel Snap](https://www.igdb.com/g/4c2v) {.fa-mobile-screen}
-- [Havest101: Farm Deck Building](https://play.google.com/store/apps/details/Harvest101_Farming_Card_Game?id=com.banjihagames.farmstone) {.fa-mobile-screen}
 
 ### What I’m [reading]{title="or listening to as an audiobook"}: {.fa-book-bookmark}
-- [Dooku - Jedi Lost](https://openlibrary.org/works/OL20662988W){.u-read-of} by [Cavan Scott](https://openlibrary.org/authors/OL3089547A) {.fa-headphones}
+- [Star Wars: Dark Disciple](https://openlibrary.org/works/OL20662988W){.u-read-of} by [Christie Golden](https://openlibrary.org/authors/OL3089547A) {.fa-headphones}
 
 ### What I’m watching: {.fa-film}
 - [Severence](https://www.imdb.com/title/tt11280740/){.u-watch-of} {.fa-tv}
 - [Star Wars: The Bad Batch](https://www.imdb.com/title/tt12708542/){.u-watch-of} {.fa-tv}
-- [Andor](https://www.imdb.com/title/tt9253284/){.u-watch-of} {.fa-tv}
 
 ### What I’m making: {.fa-screwdriver-wrench}
 - Vitraux — A dice-drafting solitaire game, modelled after [Sagrada](https://boardgamegeek.com/boardgame/199561/sagrada) {.fa-dice}
