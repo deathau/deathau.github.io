@@ -37,7 +37,7 @@
   /* misc */
   --white-glow: rgba(251,251,251,var(--mute-alpha));
   --shadow: rgba(17,17,17,var(--fade-alpha));
-  --paper-texture-svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='.4' numOctaves='3' stitchTiles='stitch' type='fractalNoise'/%3E%3CfeDropShadow dx='0' dy='0' flood-color='%23888' flood-opacity='.5' stdDeviation='1'/%3E%3CfeColorMatrix values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+  --paper-texture-svg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 800"><filter id="a"><feTurbulence baseFrequency=".4" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/><feDropShadow dx="0" dy="0" flood-color="%23888" flood-opacity=".5" stdDeviation="1"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0"/></filter><rect width="100%" height="100%" filter="url(%23a)"/></svg>');
   
   --transition: .4s;
 
