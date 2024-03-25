@@ -1,5 +1,5 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss")
-const EleventyFetch = require("@11ty/eleventy-fetch")
+const eleventySass = require("eleventy-sass");
 const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const markdownIt = require('markdown-it')
 const yaml = require("js-yaml")
@@ -73,6 +73,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(eleventySass);
 
   const markdownLib = markdownIt(markdownItOptions)
     .use(require('markdown-it-bracketed-spans'))
