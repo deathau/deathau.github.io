@@ -6,7 +6,7 @@ module.exports = async function() {
   const username = ''
   const password = ''
 
-  const headers = { 'Authorization', 'Basic ' + Buffer.from(username + ':' + password, 'utf-8').toString('base64') }
+  const headers = { "Authorization": 'Basic ' + Buffer.from(username + ':' + password, 'utf-8').toString('base64') }
 
   let response = await EleventyFetch(url, {
     fetchOptions: {
