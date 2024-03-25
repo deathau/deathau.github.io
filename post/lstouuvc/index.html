@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/assets/img/2024-avatar-tt.ico">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/2024-avatar-tt-min.svg">
+  <link rel="icon" type="image/png" href="/assets/img/2024-avatar-tiny.png">
+  <link rel="authorization_endpoint" href="https://deathau-cellar-door.glitch.me/">
+  <link rel="token_endpoint" href="https://deathau-cellar-door.glitch.me/token">
+  <link rel="webmention" href="https://webmention.io/death.id.au/webmention" />
+  <link rel="pingback" href="https://webmention.io/death.id.au/xmlrpc" />
+  <link rel="microsub" href="https://aperture.p3k.io/microsub/807">
+  <link rel="micropub" href="https://micropub.death.id.au/.netlify/functions/micropub">
+  <link rel="micropub_media" href="https://micropub.death.id.au/.netlify/functions/media">
+  <link rel="proof" href="https://proven.lol/842db2">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik">
+  <link rel="stylesheet" href="https://cdn.cache.lol/profiles/icons/omg.lol-icons.css?v=2024-01-09d">
+  <link rel="stylesheet" href="/css/styles.css?v=1.0.3">
+  <script src="https://kit.fontawesome.com/ebe14e90c3.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon/build/global/luxon.min.js" crossorigin="anonymous"></script>
+  <title>Mon Repos (Death&#39;s Domain)</title>
+  
+</head>
+
+<body>
+  <div class="theme-button-container">
+    <input type="checkbox" id="theme"></input>
+  </div>
+  <main>
+    <article>
+  
+    <div>
+  
+    <div>
+  
+    
+    
+  
+
+  <header class="h-card p-author">
+    <a class="u-url" href="https://monrepos.casa/profile/death.au">
+      <img class="small-avatar u-photo" src="https://monrepos.casa/photo/contact/320/f6a49aad-2065-5414-7935-643880513917?ts=1708315431" alt="@death.au" />
+    </a>
+    <a class="u-url p-name" href="https://monrepos.casa/profile/death.au">
+      @death.au
+    </a>
+    <a  href="https://monrepos.casa/display/0e03068e-1465-d3ff-6e99-355724502149" target="_blank" title="permalink">
+      <time class="dt-published" datetime="2024-02-20T01:25:02.000Z">2024-02-20 01:25:02</time>
+    </a>
+  </header>
+    <div class="content">
+      <p>Some random ideas that have popped up are sort of coalescing. Into what, I'm not sure yet. But I fell down a rabbit hole, and this article represents my climb back up. As such, I wouldn't consider this a proper, professional think piece. Just some notes, thoughts and scratchings that I decided to share.</p><hr><h2>OBTF</h2><p><br><a class="u-url mention status-link" href="https://pkm.social/users/ellane" rel="noopener noreferrer" target="_blank" title="ellane">@<span>ellane</span></a> has been documenting her experiments with OBTF (One Big Text File) (<a href="https://www.blog.plaintextpaperless.com/i/141545358/the-one-big-text-file-experiment-has-begun" target="_blank" rel="noopener noreferrer">link</a>). She links off to others who are doing this, and it's something I've seen before and not paid too much attention to. But now I'm seriously considering it.</p><p>One thing she's doing that stuck out to me, is following bullet-journaling principals and marking each entry with a single letter followed by a period (e.g. <code>N.</code> for note, <code>T.</code> for task, <code>E.</code> for event...). She chose letters rather than symbols so they could be quickly and easily entered on a phone without too much hunting. Double-tapping space will enter the period for her. Plus it's simple to search write queries for.<br></p><h2>Subtext</h2><p><br>Entirely separate to that whole thing, I stumbled across <a href="https://github.com/subconsciousnetwork/subtext" target="_blank" rel="noopener noreferrer">Subtext</a>, which bills itself as "markup for note taking". The general idea is to treat each line as its own block with a "sigil" at the start indicating the block's purpose (e.g. <code>#</code> for heading, <code>-</code> for list item, <code>&gt;</code> for quote). It bears a resemblance to markdown, except for that focus on blocks, and a complete lack of formatting (it's an index card, not a page).</p><p>It also supports linking, through simple URLs (or surrounding unusual URLS in <code>&amp;lt;&gt;</code>), as well as shorthand "slashlinks" to local files. The intention is for links to be transcluded. This allows things like tables to be included by linking to a CSV file. Or if you really need presentation formatting, you can link to a markdown file or PDF or something.<br></p><h2>ELF</h2><p><br>Subtext is conceptually similar to <a href="http://www.thetednelson.com/" target="_blank" rel="noopener noreferrer">Ted Nelson</a>'s idea of an ELF (Evolutionary List File). An ELF has three elements:<br>- Entries: A discrete unit of information designated by the user. Text (long or short), symbols, pictures, anything. <em>I could see these as "files" as they exist today. Remember, Ted was living in the 60s and 70s and imagining the future of computers at this point.</em><br>- Lists: An ordered set of entries as designated by the user. An entry can exist in any number of lists. <em><a class="mention hashtag status-link" href="https://monrepos.casa/search?tag=MOC" rel="tag">#<span>MOC</span></a> s?</em><br>- Links: A connector, designated by the user, between two entries in different lists. An entry in one list may be linked to only one entry in another list. <em>Of course, entries in lists can be linked <strong>to</strong> from multiple places</em><br>I think of Notion. Every Notion "document" is actually a list of blocks that can be of different types. Blocks can be linked to specifically.<br>Backlinks are a big thing, too. Seeing everything that links to the entry you're looking at is important. Of course, Ted is all about that transclusion, too. So this is where the "slashlinks" of Subtext come into it. A Subtext file is a <strong>list</strong> of <strong>entries</strong>. There is one entry per line - mostly plain-text, with specified "sigils" to indicate different types of meanings, or URLs/slashlinks, which can transclude files as different kinds of entries. As a plain-text file, it can't really block-reference entries in other list files, so it doesn't quite fit the ELF 100%, but it's close.<br></p><h2>Putting it all together</h2><p><br>Can we use the Subtext and ELF principals in OBTF? Subtext "sigils" are basically just the bullet types Ellaine was using for her bullet-journal-style approach to the OBTF. Also keep in mind that the OBTF <em>isn't</em> the entire knowledge base - it's just an inbox; a staging area; a replacement for your daily notes; an ever-evolving <a class="mention hashtag status-link" href="https://monrepos.casa/search?tag=MOC" rel="tag">#<span>MOC</span></a> of your day-to-day life.<br>It's a highly personal thing. You could make a note in your OBTF, then later refactor it out into its own note file (I would leave the OBTF entry as-is and just link it to the new note). You can quick-capture tasks, which you keep track of through other means (by Dataview queries in Obsidian, or moving them over to a task management app as part of a daily process). It's all up to you.</p><p>I think I'm inspired to start my own OBTF experiment. I've been off-and-on looking for a new journaling practice since I fell off that bandwagon many years ago, but nothing has quite stuck. Maybe I could try some form of interstitial journaling, along with capturing tasks, ideas, meeting notes, etc in a OBTF list, using bullet journaling principals for each entry. As I intend to keep this file in Obsidian, I intend to use markdown-compatible "sigils" from Subtext (e.g. <code>#</code> for heading, <code>-</code> for list item, <code>&gt;</code> for quote), as well as others like <code>- [ ]</code> for tasks.<br>There are some plugins/styles for rendering different kinds of "task statuses", too. I could render <code>- [i]</code> as a lightbulb (💡) for example. Simple to search for and query, as well. A bit cumbersome to type on mobile, but I could put in some work to customize the toolbar in obsidian mobile...</p><p>Alternately, I could just keep things like "ideas" as basic text blocks with a hashtag (e.g. <code>#idea</code>) at the end of the line if it's something I'll want to search for later. It might resemble a more free-form journal that way.</p><hr><p>As I stated at the start, this was a collection of ideas I needed to braindump and decided to share. So I don't really have a proper conclusion for you.</p>
+    </div>
+  
+</div>
+    <hr>
+    <i class="fa fa-reply" title="Replied"></i>
+    
+    
+  
+
+  <header class="h-card p-author">
+    <a class="u-url" href="https://monrepos.casa/profile/death.au">
+      <img class="small-avatar u-photo" src="https://monrepos.casa/photo/contact/320/f6a49aad-2065-5414-7935-643880513917?ts=1708315431" alt="@death.au" />
+    </a>
+    <a class="u-url p-name" href="https://monrepos.casa/profile/death.au">
+      @death.au
+    </a>
+    <a  href="/post/lstouuvc" title="permalink">
+      <time class="dt-published" datetime="2024-02-20T01:30:21.000Z">2024-02-20 01:30:21</time>
+    </a>
+  </header>
+    <div class="reply content">
+      This is my first time publishing an "article" through Friendica. It looks like Mastodon may just show a link to the Friendica post, but that may depend on the app you're using, too. Let me know how it appears to you.
+    </div>
+  
+</div>
+  
+</article>
+  </main>
+</body>
+<script src="/assets/js/relative-time.js"></script>
+
+</html>
