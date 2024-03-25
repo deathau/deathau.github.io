@@ -1,0 +1,12 @@
+{%- from 'post/header.macro.njk' import headerMacro -%}
+
+{%- macro reblogMacro(item) -%}
+  {{ headerMacro(item) }}
+  <div>
+    <i class="fa fa-retweet" title="Boosted"></i>
+    {{headerMacro(item.reblog)}}
+    <div class="reply content">
+      {{ item.reblog.content | safe }}
+    </div>
+  </div>
+{%- endmacro -%}

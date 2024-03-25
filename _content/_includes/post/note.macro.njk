@@ -1,0 +1,20 @@
+{%- from 'post/header.macro.njk' import headerMacro -%}
+
+{%- macro noteMacro(item) -%}
+<div>
+  {% if item.in_reply_to_status %}
+    {{ noteMacro(item.in_reply_to_status) }}
+    <hr>
+    <i class="fa fa-reply" title="Replied"></i>
+    {{ headerMacro(item) }}
+    <div class="reply content">
+      {{ item.content | safe }}
+    </div>
+  {% else %}
+    {{ headerMacro(item) }}
+    <div class="content">
+      {{ item.content | safe }}
+    </div>
+  {% endif %}
+</div>
+{%- endmacro -%}

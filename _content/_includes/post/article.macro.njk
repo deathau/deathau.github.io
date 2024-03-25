@@ -1,0 +1,9 @@
+{%- from 'post/header.macro.njk' import headerMacro -%}
+
+{%- macro articleMacro(item) -%}
+  {{ headerMacro(item) }}
+  <h1>{{ item.friendica.title }}</h1>
+  <div class="content">
+  {{ item.content | safe }}
+  </div>
+{%- endmacro -%}

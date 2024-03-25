@@ -1,0 +1,21 @@
+{%- macro headerMacro(item) -%}
+
+  {% if item.myid %}
+    {% set permalinkProps = ' href="/post/' + item.myid + '"' %}
+  {% else %}
+    {% set permalinkProps = ' href="' + item.url + '" target="_blank"' %}
+  {% endif %}
+
+  <header class="h-card p-author">
+    <a class="u-url" href="{{ item.account.url }}">
+      <img class="small-avatar u-photo" src="{{item.account.avatar}}" alt="@{{ item.account.acct }}" />
+    </a>
+    <a class="u-url p-name" href="{{ item.account.url }}">
+      @{{ item.account.acct }}
+    </a>
+    <a {{ permalinkProps | safe }} title="permalink">
+      <time class="dt-published" datetime="{{ item.created_at | dateISOString }}">{{ item.created_at | formatDate }}</time>
+    </a>
+  </header>
+
+{%- endmacro -%}

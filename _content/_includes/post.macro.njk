@@ -1,0 +1,15 @@
+{%- from 'post/article.macro.njk' import articleMacro -%}
+{%- from 'post/reblog.macro.njk' import reblogMacro -%}
+{%- from 'post/note.macro.njk' import noteMacro -%}
+
+{%- macro postMacro(item) -%}
+<article>
+  {% if item.reblog %}
+    {{ reblogMacro(item) }}
+  {% elseif item.friendica.title %}
+    {{ articleMacro(item) }}
+  {% elseif item.content %}
+    {{ noteMacro(item) }}
+  {% endif %}
+</article>
+{%- endmacro -%}
