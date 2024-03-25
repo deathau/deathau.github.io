@@ -4,7 +4,7 @@ pagination:
   data: friendica
   size: 1
   alias: post
-permalink: "post/{{ post.myid }}"
+permalink: "post/{{ post.myid }}/"
 ---
 {%- from 'post.macro.njk' import postMacro -%}
 {{ postMacro(post) }}
