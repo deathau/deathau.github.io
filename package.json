@@ -31,7 +31,6 @@
     "js-yaml": "^4.1.0",
     "markdown-it-attrs": "^4.1.6",
     "markdown-it-bracketed-spans": "^1.0.1",
-    "postcss": "^8.4.38",
-    "sass": "^1.72.0"
+    "postcss": "^8.4.38"
   }
 }
