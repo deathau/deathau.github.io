@@ -1,3 +1,5 @@
+@use "images";
+
 .portfolio-item {
   h2 {
     &::before {
@@ -8,7 +10,7 @@
       content: '';
     }
 
-    @each $name, $url in $icons {
+    @each $name, $url in images.$icons {
       &.#{$name}::before { background-image: url($url); }
     }
   }

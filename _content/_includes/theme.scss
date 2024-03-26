@@ -1,3 +1,5 @@
+@use "images";
+
 :root {
   --font-stack: Rubik, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
 
@@ -39,7 +41,7 @@
   --white-glow: rgba(251,251,251,var(--mute-alpha));
   --shadow: rgba(17,17,17,var(--fade-alpha));
   --neon-glow-gradient: linear-gradient(45deg, #e200fb, #461036, #9100ff,#bf72f0, #5600ff, #e000fb, #5d1489, #7c519d,#730275, #934eaf);
-  --paper-texture-svg: #{$paper-texture-svg};
+  --paper-texture-svg: #{images.$paper-texture-svg};
   
   --transition: .4s;
 
