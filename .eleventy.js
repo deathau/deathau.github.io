@@ -1,8 +1,11 @@
 const pluginRss = require("@11ty/eleventy-plugin-rss")
+const pluginRev = require("eleventy-plugin-rev");
 const eleventySass = require("eleventy-sass");
 const { EleventyRenderPlugin } = require("@11ty/eleventy")
 const markdownIt = require('markdown-it')
 const yaml = require("js-yaml")
+const postcss = require("postcss");
+const autoprefixer = require("autoprefixer");
 
 const markdownItOptions = {
   html: true,
@@ -71,9 +74,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addPassthroughCopy(".well-known");
 
+  eleventyConfig.addPlugin(pluginRev);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
-  eleventyConfig.addPlugin(eleventySass);
+  eleventyConfig.addPlugin(eleventySass, {
+    postcss: postcss([autoprefixer]),
+    rev: true
+  });
 
   const markdownLib = markdownIt(markdownItOptions)
     .use(require('markdown-it-bracketed-spans'))

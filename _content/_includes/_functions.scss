@@ -1,0 +1,20 @@
+/// Replace `$search` with `$replace` in `$string`
+/// https://css-tricks.com/snippets/sass/str-replace-function/
+/// @author Kitty Giraudel
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+$data-svg-prefix: 'data:image/svg+xml;utf-8,';
+@function svg-data-url($svg) {
+  $data-uri: url( $data-svg-prefix + $svg );
+  @return str-replace( $data-uri, '#', '%23' )
+}

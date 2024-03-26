@@ -1,0 +1,14 @@
+@mixin fontawesome-text {
+  min-width: 1.5em;
+  text-align:center;
+  padding-right:0.5em;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands";
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  font-weight: 600;
+}
+

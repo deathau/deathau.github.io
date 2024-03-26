@@ -3,7 +3,7 @@ layout: layout-main.njk
 eleventyExcludeFromCollections: true
 ---
 <!-- Reference for representative h-card properties: https://microformats.org/wiki/h-card -->
-<div class="h-card" rel="author">
+<div class="h-card card main" rel="author">
   <div>
     <img class="u-photo" alt="My profile photo — a pixelated version of me circa 2024 (post haircut!)" src="/assets/img/2024-avatar-tt.svg" />
     <h1 class="p-name"> Gordon Pedersen </h1>
@@ -33,14 +33,7 @@ eleventyExcludeFromCollections: true
       <li><i class="fa fa-globe"></i> <a class="u-uid u-url" href="https://death.id.au">My website (you are here)</a></li>
       <li><i class="omg-icon omg-fediverse"></i> <a class="u-url" href="https://monrepos.casa/profile/death.au" rel="me">Friendica (Fediverse/Mastodon)</a></li>
       <li><i></i>
-        <button class="icon-button button-input"
-          data-instruction="Please enter your fediverse / mastodon handle (e.g. '@user@domain.social')" 
-          data-placeholder="@user@domain.social"
-          data-success="Thanks for the follow!"
-          onsubmit="handleFollow(event.value)">
-          <img src="/assets/img/Fediverse_logo_proposal.svg" alt="Fediverse logo">
-          Follow @death.au@monrepos.casa
-        </button>
+        {% include 'follow-button/follow-button.njk' %}
       </li>
       <li><i class="omg-icon omg-bluesky"></i> <a class="u-url" href="https://bsky.app/death.id.au" rel="me">Bluesky</a></li>
       <li><i class="fa-brands fa-github"></i> <a class="u-url" href="https://github.com/deathau" rel="me">Github</a></li>

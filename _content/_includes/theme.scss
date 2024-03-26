@@ -1,4 +1,5 @@
 :root {
+  --font-stack: Rubik, system-ui, -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
 
   /* dark theme */
   --dark-bg: #111111;
@@ -37,7 +38,8 @@
   /* misc */
   --white-glow: rgba(251,251,251,var(--mute-alpha));
   --shadow: rgba(17,17,17,var(--fade-alpha));
-  --paper-texture-svg: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 800"><filter id="a"><feTurbulence baseFrequency=".4" numOctaves="3" stitchTiles="stitch" type="fractalNoise"/><feDropShadow dx="0" dy="0" flood-color="%23888" flood-opacity=".5" stdDeviation="1"/><feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0.1 0"/></filter><rect width="100%" height="100%" filter="url(%23a)"/></svg>');
+  --neon-glow-gradient: linear-gradient(45deg, #e200fb, #461036, #9100ff,#bf72f0, #5600ff, #e000fb, #5d1489, #7c519d,#730275, #934eaf);
+  --paper-texture-svg: #{$paper-texture-svg};
   
   --transition: .4s;
 
@@ -65,3 +67,14 @@
   }
 }
 
+@keyframes glow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

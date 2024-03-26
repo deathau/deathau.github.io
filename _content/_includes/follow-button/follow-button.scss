@@ -1,0 +1,37 @@
+.follow-button {
+  button.icon-button {
+    line-height: 24px;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border: none;
+    border-radius:4px;
+    font-family: inherit;
+  }
+  button.icon-button>img {
+    max-height: 24px;
+    vertical-align: bottom;
+  }
+
+  .button-input-container>label{
+    display:block;
+    font-size:smaller;
+  }
+  .button-input-container>input,
+  .button-input-container>button{
+    background-color: var(--primary);
+    color:var(--on-primary);
+    border:none;
+    border-radius: 4px;
+  }
+  .button-input-container>input,
+  .button-input-container>input:focus {
+    border:none;
+    padding: 4px 66px 4px 6px;
+    margin-right: -60px;
+  }
+
+  .button-input-container>button{
+    border-radius: 4px;
+    border-color: var(--on-primary);
+  }
+}

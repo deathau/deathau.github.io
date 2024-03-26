@@ -18,13 +18,20 @@
     "url": "https://github.com/deathau/deathau.github.io/issues"
   },
   "homepage": "https://github.com/deathau/deathau.github.io#readme",
+  "browserslist": [
+    "defaults"
+  ],
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "autoprefixer": "^10.4.19",
+    "eleventy-plugin-rev": "^2.0.0",
     "eleventy-sass": "^2.2.4",
     "js-yaml": "^4.1.0",
     "markdown-it-attrs": "^4.1.6",
-    "markdown-it-bracketed-spans": "^1.0.1"
+    "markdown-it-bracketed-spans": "^1.0.1",
+    "postcss": "^8.4.38",
+    "sass": "^1.72.0"
   }
 }
